@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serviços: Financiamento e Consórcio - Fin Momentum</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "primary": "#000000",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#76777d",
+                        "on-secondary-container": "#00714d",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-container": "#7c839b",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#45464d",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-container": "#6cf8bb",
+                        "on-tertiary-container": "#b87500",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-tint": "#565e74",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary": "#006c49",
+                        "tertiary-container": "#2a1700",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "section-padding": "80px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "status-badge": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "status-badge": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Floating Action Button Pulse Animation */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(0, 108, 73, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(0, 108, 73, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(0, 108, 73, 0); }
+        }
+        .fab-pulse {
+            animation: pulse-ring 2s infinite;
+        }
+        
+        /* Ambient Shadows mapping */
+        .elevation-1 { box-shadow: 0px 4px 6px -1px rgba(15, 23, 42, 0.05); }
+        .elevation-2 { box-shadow: 0px 10px 15px -3px rgba(15, 23, 42, 0.1); }
+        .elevation-3 { box-shadow: 0px 20px 25px -5px rgba(15, 23, 42, 0.15), 0px 10px 10px -5px rgba(15, 23, 42, 0.04); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface docked full-width top-0 shadow-sm z-50 sticky">
+<div class="flex justify-between items-center px-gutter w-full max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-primary flex items-center gap-2" href="#"><span class="material-symbols-outlined text-secondary icon-filled" style="font-size: 32px;">account_balance</span> MP Consultoria</a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">
+                    Início
+                </a>
+<a class="font-label-md text-label-md text-secondary font-bold border-b-2 border-secondary pb-1 hover:text-secondary transition-colors duration-200 Active: opacity-80" href="#">
+                    Serviços
+                </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Financiamento</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Consórcio</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Acompanhamento</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Contato</a>
+</div>
+<!-- Trailing Action -->
+<button class="hidden md:flex items-center gap-2 bg-primary-container text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity">Área do Cliente <span class="material-symbols-outlined text-sm">login</span></button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Banner Section -->
+<section class="relative w-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A wide, high-resolution architectural photograph of a luxurious modern home with a sleek new car parked in the driveway. The scene is brightly lit by natural sunlight, conveying a sense of achievement, security, and financial momentum. The aesthetic aligns with a premium corporate modern banking style, utilizing high contrast and crisp details to evoke trust and clarity. The image has a very subtle 20% dark blue gradient overlay applied from the left side." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIZvGdLsNWNqMNhWf4ODpOgu2R2zGyjUfobN9e3TCFxHGzy6UX-YqysFNutLRHWs-g54_Nw9V8Eta0PJUGqNl86l3FdcsAaPcDS2za2mg_-0_-WTyVPhl2f8HzVXjUMeR8IMgQ9571waF2Oul3c4RPLlEs12NabzE-mOJd-A_YscpQS8KSMb232iNDMxnHCrSRbnzLDZN_VO0Ppr9QYGhoDqa76Duz3p58M94G1uqA_Dd23iFmzt0')"></div>
+<!-- Dark blue gradient overlay for text legibility (as per brand guidelines) -->
+<div class="absolute inset-0 bg-gradient-to-r from-inverse-surface/80 via-inverse-surface/40 to-transparent"></div>
+</div>
+<div class="relative max-w-container-max mx-auto px-gutter py-section-padding md:py-[120px] flex flex-col justify-center min-h-[500px]">
+<div class="max-w-2xl text-on-primary">
+<span class="inline-block px-3 py-1 bg-secondary/20 border border-secondary/50 rounded-full font-status-badge text-status-badge text-secondary-container mb-stack-md backdrop-blur-sm">
+                        Serviços Financeiros Premium
+                    </span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary mb-stack-md drop-shadow-md">
+                        Realize o Sonho da Casa ou Carro Próprio
+                    </h1>
+<p class="font-body-lg text-body-lg text-inverse-on-surface mb-stack-lg drop-shadow">
+                        Conquiste seu patrimônio com condições exclusivas, transparência total e a solidez que só um correspondente bancário autorizado pode oferecer. O seu momentum financeiro começa aqui.
+                    </p>
+<div class="flex flex-wrap gap-stack-md">
+<a class="bg-secondary text-on-secondary font-label-md text-label-md px-8 py-4 rounded-full flex items-center gap-2 hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors elevation-2 font-bold" href="#simulador">
+    Ir para o Simulador
+    <span class="material-symbols-outlined">arrow_downward</span>
+</a>
+<a class="bg-surface/10 backdrop-blur-md border border-outline-variant/30 text-on-primary font-label-md text-label-md px-8 py-4 rounded-full flex items-center gap-2 hover:bg-surface/20 transition-colors" href="#consórcio">
+                            Conhecer Consórcio
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Detalhamento: Financiamento (Bento Grid Style) -->
+<section class="py-section-padding px-gutter bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-[48px]">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm">Financiamento Estratégico</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                        Crédito estruturado para acelerar suas conquistas, com taxas competitivas e processo desburocratizado.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<!-- Card Imobiliário -->
+<div class="bg-surface-container-lowest rounded-xl elevation-1 overflow-hidden group flex flex-col h-full border border-outline-variant/20 transition-transform duration-300 hover:-translate-y-1 hover:elevation-2">
+<div class="h-64 overflow-hidden relative">
+<img alt="Financiamento Imobiliário" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A bright, airy interior shot of a modern luxury apartment living room featuring large floor-to-ceiling windows overlooking a city skyline, minimalist furniture, and subtle green accents. The photography is clean, highly detailed, and professional, perfectly suited for a premium fintech or banking correspondent website emphasizing transparency and accessible luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdTMTjheVKazic5xHVKVBTk7s77x96xoAtJMf0PILTDQt16UEA7KcibuXRljY0GSdqcnWPQcPp7A4Qfsr9vFfOA7Xgb_wtx3Y3d5p8nFjIZZhkpWYI3InKZwCZN0LJK1ym9tVz8tMyECHvjsYwJKk8fUMwfC05NgfhpF1kKScj1VtCZWnNIBNOf5gk00EpzditJeySR02WgieEJ4f83y7YI2mhw1emebzl0am0TG-zs0r-LouBmes"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm p-2 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[32px] icon-filled">real_estate_agent</span>
+</div>
+</div>
+<div class="p-stack-lg flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">Financiamento Imobiliário</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">
+                                Adquira seu imóvel residencial ou comercial com prazos estendidos de até 420 meses. Utilize seu FGTS como entrada ou para amortização, com taxas de juros pré ou pós-fixadas adequadas ao seu perfil financeiro.
+                            </p>
+<ul class="flex flex-col gap-3 mb-stack-lg">
+<li class="flex items-center gap-2 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                    Até 80% do valor do imóvel
+                                </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                    Aprovação de crédito ágil
+                                </li>
+</ul>
+<a class="font-label-md text-label-md text-secondary flex items-center gap-1 hover:underline mt-auto group-hover:text-secondary-container" href="#">
+                                Falar com um Especialista
+                                <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card Veículos -->
+<div class="bg-surface-container-lowest rounded-xl elevation-1 overflow-hidden group flex flex-col h-full border border-outline-variant/20 transition-transform duration-300 hover:-translate-y-1 hover:elevation-2">
+<div class="h-64 overflow-hidden relative">
+<img alt="Financiamento de Veículos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pristine, late-model sedan parked on a sleek, minimalist concrete surface inside a modern, brightly lit architectural space. The image focuses on the car's dynamic lines and flawless finish, captured with high-end commercial photography techniques. The mood is aspirational, secure, and professional, fitting a modern financial services platform's visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRwu5NCW5Ht7RO44iRlx8XtLkMJ7ThDeaJARP9vL7T4uVauSRnLd59asKHRbtneBuHq1QdHoQ3Ny89nOMH9YfpZEG-gSlnpPN3r0EGyndU7os1SYpj044EQQGQWuJZG_OaFuKvuFXrk-LGnDMu1jPLiyUOGYTiDwXwarFRcDvfO5Rl_lNgDrWTBYTwnKTK_A2aSK_Lyt2dpd_SR72MsYUgr0Kr9_gVErz42RAPV40VE6AVotNz9SI"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm p-2 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[32px] icon-filled">directions_car</span>
+</div>
+</div>
+<div class="p-stack-lg flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">Financiamento de Veículos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">
+                                Troque ou compre seu carro novo de forma rápida. Financiamento de até 100% do valor do veículo, com parcelas fixas (CDC) e prazos de até 60 meses para você planejar seu orçamento com segurança.
+                            </p>
+<ul class="flex flex-col gap-3 mb-stack-lg">
+<li class="flex items-center gap-2 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                    Carros novos e seminovos
+                                </li>
+<li class="flex items-center gap-2 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                    Taxas reduzidas para correntistas
+                                </li>
+</ul>
+<a class="font-label-md text-label-md text-secondary flex items-center gap-1 hover:underline mt-auto group-hover:text-secondary-container" href="#">
+                                Simular Parcela
+                                <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Seção Consórcio (Asymmetric Layout / Glassmorphism subtle) -->
+<section class="py-section-padding px-gutter bg-surface-container-low relative overflow-hidden" id="consórcio">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container-highest rounded-l-full opacity-50 -z-10 translate-x-1/3"></div>
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-section-padding items-center">
+<!-- Content -->
+<div class="order-2 lg:order-1">
+<div class="inline-flex items-center gap-2 bg-surface-variant text-on-surface px-4 py-2 rounded-full mb-stack-md">
+<span class="material-symbols-outlined text-secondary icon-filled text-sm">handshake</span>
+<span class="font-status-badge text-status-badge">Planejamento Inteligente</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-md">
+                            Consórcio: O Poder do Planejamento
+                        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                            A forma mais segura e econômica de programar a compra do seu bem. Sem juros, sem entrada e com a flexibilidade que você precisa para investir no seu futuro estruturado.
+                        </p>
+<div class="space-y-stack-md">
+<!-- Advantage 1 -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-lowest elevation-1 border border-outline-variant/10">
+<div class="bg-secondary/10 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined icon-filled">money_off</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[20px] mb-1">Zero Juros</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        No consórcio você paga apenas uma taxa de administração diluída nas parcelas, tornando o custo final muito menor que um financiamento tradicional.
+                                    </p>
+</div>
+</div>
+<!-- Advantage 2 -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-lowest elevation-1 border border-outline-variant/10">
+<div class="bg-secondary/10 p-3 rounded-lg text-secondary">
+<span class="material-symbols-outlined icon-filled">event_available</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary text-[20px] mb-1">Poder de Compra à Vista</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Ao ser contemplado (por sorteio ou lance), você recebe a carta de crédito integral, garantindo poder de negociação de pagamento à vista.
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual -->
+<div class="order-1 lg:order-2 relative">
+<div class="aspect-square rounded-[2rem] overflow-hidden elevation-2 relative z-10">
+<img alt="Planejamento de Consórcio" class="w-full h-full object-cover" data-alt="A flat lay composition featuring a modern architect's blueprints for a house, resting on a clean wooden desk alongside a set of pristine car keys and a sleek digital tablet displaying financial growth charts. The scene is brightly lit with a corporate modern aesthetic, using a light color palette with subtle secondary green accents to symbolize financial planning, consortium, and future security." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBgaox6jfbUZblyY0yo24qiRUGdbjAJ89l77mKfjvMg7HLWQYvpR3ZGguzOb3mb-iFQoSyYjvic5LPMJKXP6rbwdwQMhB8yg3C1WxCys-7HIEQ4Ze1WRV7kpgo126iOvojbMRXI7bIgqn0yvXc_t4F0oBjCeiiElrNnFJRL6anEQ0saibf0xViB2K6yMT1L9EC3JvkK5xwWoJXLegLpzgybtXWry1xSzmSLPzsE9kyuER8ISSbvdg"/>
+</div>
+<!-- Floating Glass Card -->
+<div class="absolute -bottom-8 -left-8 bg-surface/80 backdrop-blur-xl border border-outline-variant/20 p-stack-md rounded-xl elevation-3 z-20 flex items-center gap-4 hidden md:flex">
+<div class="bg-secondary text-on-secondary p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Economia de até</p>
+<p class="font-headline-sm text-headline-sm font-bold text-primary">60% em encargos</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Simulador Oficial Caixa Section -->
+<section class="py-section-padding px-gutter bg-surface" id="simulador">
+<div class="max-w-[800px] mx-auto bg-gradient-to-br from-surface-container-lowest to-secondary-container/20 rounded-[2rem] elevation-2 border border-outline-variant/20 p-gutter md:p-[48px] relative overflow-hidden text-center">
+<div class="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/30 text-secondary px-4 py-1.5 rounded-full mb-4 font-semibold text-xs tracking-wider uppercase">
+    <span class="material-symbols-outlined text-base icon-filled">account_balance</span>
+    Simulador Habitacional Oficial Caixa
+</div>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm font-bold">Faça sua Simulação Habitacional Caixa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mb-8">
+    Calcule com precisão seu financiamento imobiliário diretamente na ferramenta oficial da Caixa Econômica Federal. Descubra parcelas, taxas, subsídios e prazos ideais.
+</p>
+<div class="flex justify-center">
+    <a href="https://share.google/lsizQ16zHahbGKYZL" target="_blank" rel="noopener noreferrer" class="bg-secondary hover:bg-secondary-fixed text-on-secondary hover:text-on-secondary-fixed font-bold text-lg px-10 py-4.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center gap-3">
+        <span>Acessar Simulador Agora</span>
+        <span class="material-symbols-outlined text-xl">open_in_new</span>
+    </a>
+</div>
+<div class="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-on-surface-variant">
+    <span>*Ambiente seguro e oficial da Caixa Econômica Federal.</span>
+    <a href="home.html" class="text-secondary font-bold hover:underline">Voltar ao Início do Site</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Shared Footer Component -->
+<footer class="bg-primary-container full-width">
+<div class="w-full py-section-padding px-gutter grid grid-cols-1 md:grid-cols-4 gap-stack-lg max-w-container-max mx-auto">
+<!-- Brand & Copyright Col -->
+<div class="flex flex-col gap-stack-md md:col-span-2">
+<a class="font-headline-sm text-headline-sm text-on-primary font-bold flex items-center gap-2" href="#"><span class="material-symbols-outlined text-secondary icon-filled" style="font-size: 32px;">account_balance</span> MP Consultoria</a>
+<p class="font-body-md text-body-md text-on-primary-container opacity-80 max-w-md">© 2024 MP Consultoria. Todos os direitos reservados. Correspondente Bancário Autorizado. Unindo serviços financeiros complexos e acessibilidade ao consumidor com transparência e cuidado proativo.</p>
+</div>
+<!-- Links Col 1 -->
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-md text-label-md text-on-primary font-bold mb-2">Legal</h4>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Política de Privacidade</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Termos de Serviço</a>
+</div>
+<!-- Links Col 2 -->
+<div class="flex flex-col gap-stack-sm">
+<h4 class="font-label-md text-label-md text-on-primary font-bold mb-2">Segurança</h4>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Central de Segurança</a>
+<a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Conformidade</a>
+</div>
+</div>
+</footer>
+<!-- Sticky WhatsApp FAB (Contextual CTA) -->
+<!-- Positioned according to design rules: bottom: 24px; right: 24px; Level 3 elevation -->
+<a aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-secondary text-on-secondary rounded-full elevation-3 hover:bg-secondary-fixed transition-colors fab-pulse group cursor-pointer" href="https://wa.me/seunumerodeexemplo" rel="noopener noreferrer" target="_blank">
+<!-- SVG for WhatsApp since Material Symbols might not have the brand logo perfectly, but we are restricted to generic or material icons. I will use a generic chat icon that implies support as requested by brand rules, or just use 'forum'/'chat' -->
+<span class="material-symbols-outlined text-[28px] icon-filled group-hover:scale-110 transition-transform">forum</span>
+<!-- Tooltip on hover -->
+<span class="absolute right-full mr-4 bg-surface-container-highest text-primary font-label-md text-label-md px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none elevation-1 border border-outline-variant/20">
+            Fale com um Especialista
+        </span>
+</a>
+</body></html>

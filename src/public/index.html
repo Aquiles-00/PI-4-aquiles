@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>MP Consultoria - Correspondente Bancário Autorizado</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "primary": "#000000",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#76777d",
+                        "on-secondary-container": "#00714d",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-container": "#7c839b",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#45464d",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-container": "#6cf8bb",
+                        "on-tertiary-container": "#b87500",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-tint": "#565e74",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary": "#006c49",
+                        "tertiary-container": "#2a1700",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "section-padding": "80px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "status-badge": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "status-badge": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+    <!-- TopNavBar Component -->
+    <nav class="sticky top-0 z-50 bg-surface shadow-sm">
+        <div class="flex justify-between items-center px-gutter w-full max-w-container-max mx-auto h-20">
+            <!-- Brand -->
+            <a href="index.html" class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary icon-fill text-[30px]">account_balance</span>
+                MP Consultoria
+            </a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-6">
+                <a class="font-label-md text-label-md text-secondary font-bold border-b-2 border-secondary pb-1" href="index.html">Início</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1" href="#servicos">Serviços</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1" href="financing_consortium.html">Financiamento</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1" href="financing_consortium.html#consorcio">Consórcio</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1" href="payroll_cards.html">Consignado & Cartões</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors duration-200 pb-1" href="client_portal.html">Acompanhamento</a>
+            </div>
+            <!-- Trailing Action -->
+            <a href="client_portal.html" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:bg-primary/90 transition-colors shadow-sm flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]">person</span>
+                Área do Cliente
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] flex items-center bg-surface-container-low">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv-dZv5ZeQBlY_tbmUX4NUdoo7PxYSlsujQqT525l3iX8eJYMlcLghVKqLbq830UAHu7_nV5wxustzLBDvApNoWVUFvfmY4-1uhi5n22K6z3Hxn5iWqlTGmnRsBRH_S6G7SPDUqc4NA3ECuFhSRgaEAHIAyxNiEejZFrgtrm5lZL2m_HuIEC2gsc35T7XQ0KK4lNrVy9rtzEu5_NTtNyGa3iZP0xxdGID6QSelQcaYzlKn9NuGZeM" alt="Atendimento Financeiro Especializado">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 via-primary-container/40 to-transparent mix-blend-multiply"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-container-max mx-auto px-gutter py-section-padding flex flex-col md:w-3/5">
+            <span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest mb-stack-sm flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px]">verified_user</span> Seu Futuro Seguro
+            </span>
+            <h1 class="font-headline-lg text-headline-lg text-on-primary mb-stack-md text-balance">
+                Soluções Financeiras com Transparência e Agilidade
+            </h1>
+            <p class="font-body-lg text-body-lg text-inverse-on-surface/90 mb-stack-lg max-w-2xl">
+                Impulsione suas conquistas com o suporte de especialistas. Oferecemos as melhores condições em crédito, consórcios e financiamentos, conectando você às principais instituições do mercado.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="openLeadModal('Geral')" class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-secondary/90 transition-all shadow-md flex items-center justify-center gap-2">
+                    Falar com Consultor <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </button>
+                <a href="financing_consortium.html#simulador" class="bg-surface/20 backdrop-blur-md border border-white/30 text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-surface/30 transition-all flex items-center justify-center gap-2">
+                    Simular Agora <span class="material-symbols-outlined text-[20px]">calculate</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Cards Section -->
+    <section class="py-section-padding bg-surface" id="servicos">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="text-center mb-section-padding">
+                <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Nossos Serviços</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Soluções sob medida para o seu momento de vida ou para o crescimento da sua empresa.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-lg">
+                <!-- Card 1: Financiamento -->
+                <div class="bg-surface-container-lowest rounded-2xl p-stack-lg shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/20 hover:shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] transition-all group flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-secondary icon-fill text-[24px]">real_estate_agent</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-sm">Financiamento</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Acelere a conquista da sua casa própria ou veículo com taxas competitivas e aprovação rápida.</p>
+                    <a class="font-label-md text-label-md text-secondary flex items-center gap-1 hover:underline mt-auto" href="financing_consortium.html">
+                        Saiba mais <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                </div>
+                <!-- Card 2: Consignado -->
+                <div class="bg-surface-container-lowest rounded-2xl p-stack-lg shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/20 hover:shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] transition-all group flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-secondary icon-fill text-[24px]">savings</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-sm">Consignado</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Crédito inteligente para aposentados, pensionistas e servidores, com desconto direto em folha.</p>
+                    <a class="font-label-md text-label-md text-secondary flex items-center gap-1 hover:underline mt-auto" href="payroll_cards.html">
+                        Saiba mais <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                </div>
+                <!-- Card 3: Consórcio -->
+                <div class="bg-surface-container-lowest rounded-2xl p-stack-lg shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/20 hover:shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] transition-all group flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-secondary icon-fill text-[24px]">handshake</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-sm">Consórcio</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Planeje seu futuro sem pagar juros. Opções flexíveis para imóveis, veículos e serviços.</p>
+                    <a class="font-label-md text-label-md text-secondary flex items-center gap-1 hover:underline mt-auto" href="financing_consortium.html#consorcio">
+                        Saiba mais <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                </div>
+                <!-- Card 4: Cartões -->
+                <div class="bg-surface-container-lowest rounded-2xl p-stack-lg shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant/20 hover:shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.1)] transition-all group flex flex-col h-full">
+                    <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-stack-md group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-secondary icon-fill text-[24px]">credit_card</span>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-sm">Cartões</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg flex-grow">Limites adequados ao seu perfil e benefícios exclusivos com cashback para facilitar o seu dia a dia.</p>
+                    <a class="font-label-md text-label-md text-secondary flex items-center gap-1 hover:underline mt-auto" href="payroll_cards.html">
+                        Saiba mais <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section (Bento Grid Style) -->
+    <section class="py-section-padding bg-surface-container-low">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+                <!-- Text Area -->
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Por que escolher a MP Consultoria?</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">Nossa expertise é transformar burocracia em resultados. Atuamos como a ponte confiável entre você e o sistema financeiro, garantindo que suas escolhas sejam sempre informadas e vantajosas.</p>
+                </div>
+                <!-- Features Grid -->
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+                    <!-- Feature 1 -->
+                    <div class="bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant/20 flex gap-4 items-start shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)]">
+                        <div class="mt-1 p-2 bg-primary-container/10 rounded-lg text-primary">
+                            <span class="material-symbols-outlined icon-fill">shield_lock</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-md text-label-md text-on-surface font-bold mb-1">Segurança Absoluta</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Operamos em conformidade com as diretrizes do Banco Central, protegendo seus dados e transações.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant/20 flex gap-4 items-start shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)]">
+                        <div class="mt-1 p-2 bg-secondary/10 rounded-lg text-secondary">
+                            <span class="material-symbols-outlined icon-fill">bolt</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-md text-label-md text-on-surface font-bold mb-1">Rapidez na Análise</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Sistemas integrados que garantem uma resposta ágil para a liberação do seu crédito.</p>
+                        </div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant/20 flex gap-4 items-start shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] md:col-span-2">
+                        <div class="mt-1 p-2 bg-tertiary-container/10 rounded-lg text-tertiary-container">
+                            <span class="material-symbols-outlined icon-fill">support_agent</span>
+                        </div>
+                        <div>
+                            <h4 class="font-label-md text-label-md text-on-surface font-bold mb-1">Atendimento Personalizado</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Consultores dedicados a entender seu perfil e encontrar a solução mais aderente à sua realidade financeira.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Area CTA Banner -->
+    <section class="py-16 bg-primary text-on-primary">
+        <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+                <h3 class="font-headline-md text-2xl font-bold mb-2">Já possui uma proposta em andamento?</h3>
+                <p class="text-on-primary-container text-body-md">Acompanhe cada etapa da sua solicitação em tempo real pela nossa Área do Cliente.</p>
+            </div>
+            <a href="client_portal.html" class="bg-secondary hover:bg-secondary-fixed text-on-secondary px-8 py-3.5 rounded-lg font-label-md font-bold transition-all shadow-md shrink-0">
+                Acessar Área do Cliente
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-container py-12 text-on-primary border-t border-outline-variant/20">
+        <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary icon-fill">account_balance</span>
+                <span class="font-bold text-lg">MP Consultoria</span>
+            </div>
+            <p class="text-sm text-on-primary-container">© 2026 MP Consultoria. Correspondente Bancário Autorizado. Todos os direitos reservados.</p>
+            <div class="flex gap-4 text-sm text-on-primary-container">
+                <a href="client_portal.html" class="hover:underline">Portal do Cliente</a>
+                <a href="financing_consortium.html#simulador" class="hover:underline">Simulador</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal "Falar com Consultor" -->
+    <div id="leadModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-surface rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl border border-outline-variant/30 relative">
+            <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-primary">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary">support_agent</span>
+                Falar com Consultor
+            </h3>
+            <p class="text-sm text-on-surface-variant mb-6">Preencha seus dados para receber atendimento personalizado de um de nossos especialistas.</p>
+
+            <form id="leadForm" class="space-y-4">
+                <div>
+                    <label class="block font-label-md text-xs font-bold text-on-surface mb-1">Nome Completo *</label>
+                    <input type="text" id="leadName" required placeholder="Seu nome" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/50 outline-none">
+                </div>
+                <div>
+                    <label class="block font-label-md text-xs font-bold text-on-surface mb-1">WhatsApp / Telefone *</label>
+                    <input type="tel" id="leadPhone" required placeholder="(11) 99999-9999" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/50 outline-none">
+                </div>
+                <div>
+                    <label class="block font-label-md text-xs font-bold text-on-surface mb-1">E-mail</label>
+                    <input type="email" id="leadEmail" placeholder="seu@email.com" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/50 outline-none">
+                </div>
+                <div>
+                    <label class="block font-label-md text-xs font-bold text-on-surface mb-1">Interesse</label>
+                    <select id="leadService" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/50 outline-none">
+                        <option value="Financiamento Imobiliário">Financiamento Imobiliário</option>
+                        <option value="Financiamento Veicular">Financiamento Veicular</option>
+                        <option value="Consórcio">Consórcio de Imóvel / Veículo</option>
+                        <option value="Consignado INSS / Servidor">Crédito Consignado</option>
+                        <option value="Antecipação FGTS">Antecipação FGTS Saque-Aniversário</option>
+                        <option value="Cartão de Crédito">Cartão de Crédito Platinum</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-label-md text-xs font-bold text-on-surface mb-1">Mensagem (opcional)</label>
+                    <textarea id="leadMsg" rows="2" placeholder="Descreva brevemente o que precisa..." class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-sm focus:border-secondary focus:ring-2 focus:ring-secondary/50 outline-none"></textarea>
+                </div>
+                <button type="submit" id="btnSubmitLead" class="w-full bg-secondary hover:bg-secondary-fixed text-on-secondary font-label-md font-bold py-3.5 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2">
+                    <span>Enviar Solicitação</span>
+                    <span class="material-symbols-outlined text-sm">send</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts de Integração com o Backend / Local -->
+    <script src="js/api.js"></script>
+    <script>
+        window.openLeadModal = (service = 'Geral') => {
+            const modal = document.getElementById('leadModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            if (service !== 'Geral') {
+                document.getElementById('leadService').value = service;
+            }
+        };
+
+        window.closeLeadModal = () => {
+            const modal = document.getElementById('leadModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        };
+
+        document.getElementById('leadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btnSubmitLead');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Enviando...';
+
+            const payload = {
+                name: document.getElementById('leadName').value,
+                phone: document.getElementById('leadPhone').value,
+                email: document.getElementById('leadEmail').value,
+                serviceInterest: document.getElementById('leadService').value,
+                message: document.getElementById('leadMsg').value
+            };
+
+            try {
+                const res = await window.api.sendLead(payload);
+                if (res.success) {
+                    window.showToast('Solicitação enviada com sucesso! Nosso consultor entrará em contato.', 'success');
+                    closeLeadModal();
+                    document.getElementById('leadForm').reset();
+                } else {
+                    window.showToast(res.error || 'Erro ao enviar contato.', 'error');
+                }
+            } catch (err) {
+                window.showToast('Erro de conexão com o servidor.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Enviar Solicitação</span><span class="material-symbols-outlined text-sm">send</span>';
+            }
+        });
+    </script>
+</body>
+</html>

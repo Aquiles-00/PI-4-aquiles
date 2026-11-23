@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Serviços - MP Consultoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "primary": "#000000",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#76777d",
+                        "on-secondary-container": "#00714d",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-container": "#7c839b",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#45464d",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-container": "#6cf8bb",
+                        "on-tertiary-container": "#b87500",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-tint": "#565e74",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary": "#006c49",
+                        "tertiary-container": "#2a1700",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "section-padding": "80px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "status-badge": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "status-badge": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        .bg-gradient-hero {
+            background: linear-gradient(90deg, rgba(13,27,46,0.85) 0%, rgba(13,27,46,0.2) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-on-surface docked full-width top-0 shadow-sm sticky z-50">
+<div class="flex justify-between items-center px-gutter w-full max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed flex items-center gap-2" href="#"><span class="material-symbols-outlined text-secondary icon-filled" style="font-size: 32px;">account_balance</span>
+                MP Consultoria</a>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200 font-label-md text-label-md" href="#">Início</a>
+<a class="text-secondary dark:text-secondary-fixed font-bold border-b-2 border-secondary hover:text-secondary transition-colors duration-200 font-label-md text-label-md flex items-center gap-1" href="#">Serviços <span class="material-symbols-outlined text-sm">expand_more</span></a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200 font-label-md text-label-md" href="#">Financiamento</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200 font-label-md text-label-md" href="#">Consórcio</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200 font-label-md text-label-md" href="#">Acompanhamento</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary transition-colors duration-200 font-label-md text-label-md" href="#">Contato</a>
+</div>
+<!-- Primary Action -->
+<button class="bg-primary text-on-primary hover:bg-inverse-surface px-6 py-2.5 rounded-lg font-label-md text-label-md transition-colors hidden md:block">Área do Cliente</button>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative w-full h-[500px] bg-surface-container-high overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A high-resolution, professional photograph of an active, smiling elderly couple reviewing financial documents with a warmly dressed financial advisor in a bright, modern office space. The room is flooded with natural light from large windows, creating a clean, airy, light-mode aesthetic. The color palette features soft neutrals, whites, and subtle hints of emerald green from indoor plants. The mood is highly reassuring, authoritative yet accessible, and deeply focused on financial security and momentum." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC40sYxY2uo00-Lq7ObFWLdUcaix7AjLW6wt0OeqLe1z8_d8IS3BYz3LRlf1QJefHrWSY0Aqk9Pi5RIEA3Y8nMoOgzsT7H1xUUoBQwhO72__nWg0YIekRsnnWFR5NBZFHRNPFzTZTNbxUoZY1iHnO19v4FS0xLQ3Lpo7MlRo08k8yO-2viv6wTL1CQFK-FV4FnHrrxMX9qICPP3PdkctM8oODYyFvUvxuwd26r9bx2R0wergEq3W-I')"></div>
+<div class="absolute inset-0 bg-gradient-hero"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-gutter md:px-gutter">
+<div class="max-w-2xl text-on-primary">
+<span class="inline-block bg-secondary-container text-on-secondary-container font-status-badge text-status-badge px-3 py-1 rounded-full mb-6 uppercase tracking-wider">Serviços Financeiros</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-6 leading-tight">Crédito Consciente para Quem Mais Precisa</h1>
+<p class="font-body-lg text-body-lg text-surface-bright/90 mb-8 max-w-xl">Soluções financeiras seguras e transparentes. Taxas justas e condições especiais para aposentados, pensionistas e servidores públicos.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+
+<button class="bg-surface-bright text-primary hover:bg-surface-container-low px-8 py-4 rounded-lg font-label-md text-label-md transition-colors flex items-center justify-center gap-2">
+                            Falar com Consultor
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-section-padding px-gutter w-full max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Soluções que impulsionam sua vida</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Conheça nossos principais serviços desenvolvidos para oferecer segurança e praticidade ao seu dia a dia.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Consigned Loan Card -->
+<div class="bg-surface-container-lowest rounded-[16px] p-8 shadow-sm border border-outline-variant/30 flex flex-col h-full hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined icon-filled" style="font-size: 28px;">payments</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Empréstimo Consignado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Acesso rápido a crédito com as menores taxas do mercado. Ideal para realizar planos com parcelas que cabem no seu orçamento, descontadas diretamente em folha.</p>
+<div class="space-y-3 mb-8">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Exclusivo para Aposentados e Pensionistas do INSS</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Servidores Públicos (Federais, Estaduais e Municipais)</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Sem consulta ao SPC/Serasa</span>
+</div>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:text-on-secondary-fixed-variant flex items-center gap-1 mt-auto group" href="#">
+                        Saiba mais sobre Consignado
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Credit Card Card -->
+<div class="bg-surface-container-lowest rounded-[16px] p-8 shadow-sm border border-outline-variant/30 flex flex-col h-full hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined icon-filled" style="font-size: 28px;">credit_card</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Cartão de Crédito e Conta</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Liberdade financeira na palma da mão. Um cartão aceito internacionalmente integrado a uma conta digital sem tarifas abusivas e cheia de vantagens.</p>
+<div class="space-y-3 mb-8">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Anuidade ZERO para sempre</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Cashback em todas as compras acima de R$ 50</span>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Conta digital 100% gratuita com Pix e transferências</span>
+</div>
+</div>
+<a class="font-label-md text-label-md text-secondary hover:text-on-secondary-fixed-variant flex items-center gap-1 mt-auto group" href="#">
+                        Solicitar meu Cartão
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-surface-container-highest w-full py-section-padding px-gutter mt-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<a class="font-headline-sm text-headline-sm text-on-primary flex items-center gap-2 mb-4" href="#"><span class="material-symbols-outlined icon-filled">account_balance</span>
+                    MP Consultoria</a>
+<p class="font-body-md text-body-md text-on-primary-container opacity-80 mb-6">Autoridade, transparência e proatividade para impulsionar sua vida financeira com total segurança.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-secondary-fixed font-medium mb-4">Serviços</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Empréstimo Consignado</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Cartões de Crédito</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Consórcio</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-secondary-fixed font-medium mb-4">Legal</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Política de Privacidade</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Termos de Serviço</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Segurança</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-primary-container opacity-80 hover:underline" href="#">Conformidade</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-secondary-fixed font-medium mb-4">Contato</h4>
+<ul class="space-y-3 text-on-primary-container opacity-80 font-body-md text-body-md">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> contato@finmomentum.com.br</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone</span> 0800 123 4567</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-12 pt-8 border-t border-outline/20">
+<p class="font-body-md text-body-md text-on-primary-container opacity-60 text-center">
+                © 2024 MP Consultoria. Todos os direitos reservados. Correspondente Bancário Autorizado.
+            </p>
+</div>
+</footer>
+<!-- Sticky WhatsApp Button -->
+<a aria-label="WhatsApp Support" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_10px_15px_-3px_rgba(15,23,42,0.2)] hover:scale-110 transition-transform z-50 group" href="https://wa.me/5511999999999" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" style="font-size: 28px;">chat</span>
+<span class="absolute right-16 bg-surface-container-lowest text-on-surface px-3 py-1 rounded shadow-md text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity font-label-md">Fale conosco</span>
+</a>
+
+
+</body></html>

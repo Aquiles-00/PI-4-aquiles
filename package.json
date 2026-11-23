@@ -1,0 +1,28 @@
+{
+  "name": "portal-servicos-financeiros-backend",
+  "version": "1.0.0",
+  "description": "Backend API para o Portal de Serviços Financeiros - MP Consultoria",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/database/seeds.js",
+    "test": "node --test test/**/*.test.js"
+  },
+  "keywords": [
+    "fintech",
+    "correspondente-bancario",
+    "consignado",
+    "financiamento",
+    "consorcio",
+    "express",
+    "sqlite"
+  ],
+  "author": "MP Consultoria",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

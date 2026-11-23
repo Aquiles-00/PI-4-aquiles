@@ -1,0 +1,71 @@
+======================================================================
+     MP CONSULTORIA - PORTAL DE SERVIÇOS FINANCEIROS (PROJETO PI 4)
+======================================================================
+
+Este projeto foi preparado para ser aberto e executado em qualquer outro
+computador de forma rápida, local e SEM necessidade de hospedagem externa!
+
+----------------------------------------------------------------------
+OPÇÃO 1: MODO INSTANTÂNEO (SEM INSTALAR NADA / 2 CLIQUES)
+----------------------------------------------------------------------
+Ideal para apresentações rápidas, computadores da faculdade ou caso não queira instalar o Node.js:
+
+1. Dê um duplo clique no arquivo:
+   👉 "Abrir_Portal.html"
+   (ou abra diretamente a pasta "src/public/index.html" no Google Chrome, Edge, Firefox, etc.)
+
+2. O sistema abrirá imediatamente com todas as funcionalidades ativas:
+   - Acesso direto ao Simulador Habitacional Oficial Caixa (Link Oficial)
+   - Simulador de Consórcio Imobiliário e Automotivo (Sem Juros)
+   - Simulador de Empréstimo Consignado INSS / Servidor Público
+   - Simulador de Antecipação Saque-Aniversário FGTS
+   - Cadastro e envio de Propostas e Leads
+   - Solicitação e Aprovação de Cartões Platinum
+   - Área do Cliente com busca por CPF (Ex: 123.456.789-00 ou 12345678900)
+   - Acompanhamento de Etapas (Análise, Aprovação, Assinatura, Liberação) e Linha do Tempo
+
+----------------------------------------------------------------------
+OPÇÃO 2: MODO COMPLETO COM SERVIDOR LOCAL (NODE.JS + SQLITE)
+----------------------------------------------------------------------
+Se o computador possuir o Node.js instalado (ou se quiser rodar a API REST completa):
+
+• No Windows:
+  1. Dê um duplo clique no arquivo "iniciar.bat".
+  2. O script instalará as dependências automaticamente, inicializará
+     o banco de dados SQLite com as Seeds de teste e abrirá o navegador
+     em http://localhost:3000.
+
+• No Linux / Mac:
+  1. Abra o terminal na pasta do projeto e execute:
+     chmod +x iniciar.sh && ./iniciar.sh
+
+----------------------------------------------------------------------
+DADOS DE TESTE PRÉ-CADASTRADOS NA ÁREA DO CLIENTE
+----------------------------------------------------------------------
+Na tela "Área do Cliente" (Acompanhamento), você pode consultar os seguintes CPFs de demonstração:
+
+• CPF 1: 123.456.789-00 (João Silva)
+  - Financiamento Imobiliário #49281-IMOB (Etapa: Assinatura de Contrato)
+  - Empréstimo Saque-Aniversário FGTS #8832-FGTS (Etapa: Análise Inicial)
+  - Cartão de Crédito Mastercard Platinum Ativo (Limite R$ 12.000,00)
+  - Linha do tempo com 5 eventos reais
+
+• CPF 2: 234.567.890-11 (Maria Aparecida Souza)
+  - Empréstimo Consignado INSS #77123-INSS (Etapa: Crédito Liberado / Concluído)
+
+• CPF 3: 345.678.901-22 (Carlos Eduardo Mendes)
+  - Consórcio Imobiliário #99412-CONS (Etapa: Cota Ativada / Grupo 410)
+
+----------------------------------------------------------------------
+ESTRUTURA DO PACOTE
+----------------------------------------------------------------------
+• Abrir_Portal.html      -> Atalho de entrada direta no navegador
+• iniciar.bat            -> Inicializador automático para Windows
+• iniciar.sh             -> Inicializador automático para Linux/Mac
+• src/public/            -> Frontend com todas as páginas HTML, CSS e JS
+• src/services/          -> Motor de Cálculos Financeiros (Math Engine)
+• src/controllers/       -> Controladores da API REST
+• src/database/          -> Schema SQL e Seeds de teste (SQLite)
+• data/                  -> Arquivo do banco SQLite local
+• test/                  -> Testes unitários e de integração automatizados
+======================================================================

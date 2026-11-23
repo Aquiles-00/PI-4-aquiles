@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Área do Cliente - MP Consultoria</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "primary": "#000000",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline": "#76777d",
+                        "on-secondary-container": "#00714d",
+                        "surface": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-container": "#7c839b",
+                        "background": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#45464d",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-container": "#6cf8bb",
+                        "on-tertiary-container": "#b87500",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-tint": "#565e74",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffddb8",
+                        "secondary": "#006c49",
+                        "tertiary-container": "#2a1700",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-container": "#131b2e",
+                        "tertiary": "#000000",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "section-padding": "80px",
+                        "container-max": "1280px",
+                        "stack-lg": "32px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "status-badge": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "status-badge": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex">
+    <!-- SideNavBar -->
+    <aside class="bg-surface-container-low hidden lg:flex flex-col h-screen fixed left-0 top-0 py-stack-md w-64 border-r border-outline-variant shadow-md z-40">
+        <div class="px-6 pb-8">
+            <a href="index.html" class="font-headline-md text-headline-md font-black text-primary mb-8 block">MP Consultoria</a>
+            <!-- Client Profile Area -->
+            <div class="flex items-center gap-4 mb-8">
+                <img id="sidebarAvatar" alt="Client Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW12h1y0KEC7l-2G0Wt1dVII12EbfpxIgSz31C_xXtK2e5XduWdE5i7QOc64Ic_Ss1A1wM912JNkm_BiyGHWwDc27lnvYcBD8e1mDK7jNK9UYbg6i0RYzvwLTnQI7XAnPg-N47JTENhVe0k_ftIyHWKfka54AIgaTzYQyxS8hgzp2nTqYZ_mJTD1K3S2mNk4d2f_nLhVXOkbQ0DRwt9qLqru7j1r-mTe4SLd-YiHgEPXdlwX3GiLQ"/>
+                <div>
+                    <div id="sidebarClientName" class="font-label-md text-label-md font-bold text-on-surface">Painel do Cliente</div>
+                    <div id="sidebarClientCPF" class="text-xs text-on-surface-variant">Gerencie seus processos</div>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 overflow-y-auto w-full px-2 space-y-1">
+            <a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-all" href="index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-label-md text-label-md">Início</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-all" href="financing_consortium.html">
+                <span class="material-symbols-outlined">payments</span>
+                <span class="font-label-md text-label-md">Financiamento</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-all" href="payroll_cards.html">
+                <span class="material-symbols-outlined">account_balance</span>
+                <span class="font-label-md text-label-md">Empréstimo Consignado</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-all" href="financing_consortium.html#consorcio">
+                <span class="material-symbols-outlined">handshake</span>
+                <span class="font-label-md text-label-md">Consórcio</span>
+            </a>
+            <a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-all" href="payroll_cards.html#cartoes">
+                <span class="material-symbols-outlined">credit_card</span>
+                <span class="font-label-md text-label-md">Cartões de Crédito</span>
+            </a>
+            <a aria-current="page" class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 px-4 py-3 flex items-center gap-3 transition-all font-bold" href="client_portal.html">
+                <span class="material-symbols-outlined">monitoring</span>
+                <span class="font-label-md text-label-md">Acompanhamento</span>
+            </a>
+        </nav>
+        <div class="px-6 pt-4 mt-auto">
+            <a href="https://wa.me/5511987654321" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-4 rounded-lg font-label-md text-label-md font-bold transition-colors shadow-sm">
+                <span>WhatsApp Suporte</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 lg:ml-64 bg-surface min-h-screen">
+        <!-- Mobile Header -->
+        <header class="lg:hidden bg-surface flex justify-between items-center px-6 h-20 shadow-sm border-b border-outline-variant sticky top-0 z-30">
+            <a href="index.html" class="font-headline-sm text-headline-sm font-bold text-primary">MP Consultoria</a>
+            <a href="index.html" class="text-on-surface p-2">
+                <span class="material-symbols-outlined">home</span>
+            </a>
+        </header>
+
+        <div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto py-stack-lg">
+            <!-- Welcome Header -->
+            <div class="mb-8">
+                <h1 id="greetingTitle" class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">
+                    Olá, João Silva
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">Acompanhe o status e a evolução dos seus processos ativos abaixo.</p>
+            </div>
+
+            <!-- Search Bar por CPF -->
+            <div class="mb-8 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+                <label class="block font-label-md text-label-md font-bold text-on-surface mb-2" for="cpf-search">Pesquisar processos por CPF</label>
+                <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-4 text-on-surface-variant">search</span>
+                    <input class="w-full pl-12 pr-28 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary transition-all text-on-surface placeholder:text-on-surface-variant font-medium" id="cpf-search" placeholder="Digite seu CPF (ex: 123.456.789-00)..." type="text" value="123.456.789-00"/>
+                    <button id="btnSearchCPF" class="absolute right-2 bg-secondary text-on-secondary px-6 py-2 rounded-lg font-label-md text-label-md font-bold hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                <!-- Main Process Area (2 Cols) -->
+                <div class="xl:col-span-2 flex flex-col gap-8" id="processesContainer">
+                    <!-- Cards de Processo serão renderizados dinamicamente aqui -->
+                </div>
+
+                <!-- Side Panel (History & Support) -->
+                <div class="xl:col-span-1 flex flex-col gap-8">
+                    <!-- History Timeline -->
+                    <div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant p-6">
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary">history</span>
+                            Histórico Recente
+                        </h3>
+                        <div class="space-y-6" id="timelineContainer">
+                            <!-- Eventos serão renderizados dinamicamente aqui -->
+                        </div>
+                    </div>
+
+                    <!-- Support Card -->
+                    <div class="bg-primary-container rounded-xl p-6 text-on-primary shadow-md">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-3xl text-secondary-fixed">support_agent</span>
+                            <h3 class="font-headline-sm text-xl font-bold">Precisa de Ajuda?</h3>
+                        </div>
+                        <p class="text-on-primary-container mb-6 text-sm">Nossos especialistas estão disponíveis para esclarecer qualquer dúvida sobre o andamento dos seus processos.</p>
+                        <a href="https://wa.me/5511987654321?text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+meu+processo+na+MP+Consultoria." target="_blank" class="w-full bg-[#25D366] hover:bg-[#1DA851] text-white py-3 px-4 rounded-lg font-label-md text-label-md font-bold transition-colors shadow-sm flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">chat</span>
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts de Integração com o Backend / Local -->
+    <script src="js/api.js"></script>
+    <script>
+        // Renderiza o Stepper de 4 Etapas
+        function renderStepper(currentStep) {
+            const steps = [
+                { num: 1, name: 'Análise', defaultIcon: 'search' },
+                { num: 2, name: 'Aprovação', defaultIcon: 'thumb_up' },
+                { num: 3, name: 'Assinatura', defaultIcon: 'edit_document' },
+                { num: 4, name: 'Liberação', defaultIcon: 'account_balance_wallet' }
+            ];
+
+            const progressWidth = currentStep === 1 ? '0%' : currentStep === 2 ? '33%' : currentStep === 3 ? '66%' : '100%';
+
+            return `
+                <div class="mb-8 relative">
+                    <!-- Background Line -->
+                    <div class="absolute top-5 left-8 right-8 h-1 bg-surface-container-high -translate-y-1/2 z-0 hidden sm:block"></div>
+                    <!-- Active Progress Line -->
+                    <div class="absolute top-5 left-8 h-1 bg-secondary -translate-y-1/2 z-0 hidden sm:block transition-all duration-500" style="width: ${progressWidth};"></div>
+                    
+                    <div class="relative z-10 flex flex-col sm:flex-row justify-between gap-6 sm:gap-0">
+                        ${steps.map(step => {
+                            const isCompleted = step.num < currentStep;
+                            const isActive = step.num === currentStep;
+                            const isFuture = step.num > currentStep;
+
+                            let icon = step.defaultIcon;
+                            let circleClass = 'bg-surface-container-high text-on-surface-variant opacity-50';
+                            let statusText = 'Pendente';
+                            let statusClass = 'text-on-surface-variant opacity-70';
+
+                            if (isCompleted) {
+                                icon = 'check';
+                                circleClass = 'bg-secondary text-on-secondary shadow-sm';
+                                statusText = 'Concluído';
+                                statusClass = 'text-secondary font-medium';
+                            } else if (isActive) {
+                                circleClass = 'bg-tertiary-fixed-dim text-on-tertiary-fixed-variant shadow-[0_0_0_4px_rgba(255,185,95,0.25)] ring-2 ring-tertiary-fixed';
+                                statusText = 'Em andamento';
+                                statusClass = 'text-on-surface font-bold';
+                            }
+
+                            return `
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center">
+                                    <div class="w-10 h-10 rounded-full ${circleClass} flex items-center justify-center shrink-0 transition-all duration-300">
+                                        <span class="material-symbols-outlined text-xl">${icon}</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md ${isActive ? 'font-bold text-on-surface' : 'text-on-surface'}">${step.name}</div>
+                                        <div class="text-xs ${statusClass}">${statusText}</div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Renderiza os Processos
+        function renderProposals(proposals) {
+            const container = document.getElementById('processesContainer');
+            if (!proposals || proposals.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-8 text-center">
+                        <span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2">folder_off</span>
+                        <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Nenhum processo encontrado</h3>
+                        <p class="text-sm text-on-surface-variant mb-4">Este cliente não possui processos ativos no momento.</p>
+                        <a href="financing_consortium.html#simulador" class="inline-flex items-center gap-1.5 bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-md font-bold text-sm hover:bg-secondary-fixed transition-colors">
+                            <span>Acessar Simulador</span>
+                            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = proposals.map(prop => {
+                const iconMap = {
+                    FIN_IMOB: 'real_estate_agent',
+                    FIN_VEIC: 'directions_car',
+                    CONS_IMOB: 'handshake',
+                    CONS_VEIC: 'handshake',
+                    CONSIGNADO_INSS: 'savings',
+                    CONSIGNADO_PUBLICO: 'account_balance',
+                    FGTS_ANIVERSARIO: 'savings',
+                    CARTAO_CREDITO: 'credit_card'
+                };
+                const icon = iconMap[prop.service_type] || 'payments';
+
+                const formattedAmount = Number(prop.amount).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                const formattedInstallment = prop.monthly_installment > 0 
+                    ? Number(prop.monthly_installment).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+                    : 'Desconto Anual / Isento';
+
+                const isCompleted = prop.status === 'CONCLUIDO';
+                const badgeColor = isCompleted 
+                    ? 'bg-secondary-container text-on-secondary-container' 
+                    : prop.current_step === 1 ? 'bg-surface-container-high text-on-surface-variant' : 'bg-secondary-container text-on-secondary-container';
+
+                return `
+                    <div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+                                        <span class="material-symbols-outlined">${icon}</span>
+                                    </div>
+                                    <h2 class="font-headline-sm text-headline-sm text-on-surface">${prop.title}</h2>
+                                </div>
+                                <p class="text-sm text-on-surface-variant">Contrato #${prop.contract_number} • Iniciado em ${new Date(prop.started_at || Date.now()).toLocaleDateString('pt-BR')}</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="${badgeColor} font-status-badge text-status-badge px-3.5 py-1 rounded-full font-bold">
+                                    ${prop.status_label || prop.step_name}
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Stepper Visual -->
+                        ${renderStepper(prop.current_step)}
+
+                        <!-- Detalhes do Processo -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-outline-variant/30 text-sm">
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Valor da Operação</div>
+                                <div class="font-bold text-on-surface">${formattedAmount}</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Parcela Mensal</div>
+                                <div class="font-bold text-secondary">${formattedInstallment}</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Prazo</div>
+                                <div class="font-bold text-on-surface">${prop.term_months > 0 ? prop.term_months + ' meses' : 'N/A'}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Renderiza Linha do Tempo
+        function renderTimeline(events) {
+            const container = document.getElementById('timelineContainer');
+            if (!events || events.length === 0) {
+                container.innerHTML = `<p class="text-sm text-on-surface-variant">Nenhum evento registrado ainda.</p>`;
+                return;
+            }
+
+            container.innerHTML = events.map((ev, index) => {
+                const dateStr = new Date(ev.event_time).toLocaleDateString('pt-BR') + ' às ' + new Date(ev.event_time).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+                return `
+                    <div class="relative flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary">
+                            <span class="material-symbols-outlined text-sm">${ev.icon || 'check_circle'}</span>
+                        </div>
+                        <div>
+                            <div class="font-label-md text-label-md font-bold text-on-surface">${ev.title}</div>
+                            <div class="text-xs text-on-surface-variant mb-1">${ev.proposal_title ? ev.proposal_title + ' • ' : ''}${dateStr}</div>
+                            <p class="text-sm text-on-surface">${ev.description}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Busca Cliente por CPF
+        async function fetchClientData(cpf) {
+            const btn = document.getElementById('btnSearchCPF');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">progress_activity</span>';
+
+            try {
+                const res = await window.api.searchClientByCPF(cpf);
+                if (res.success && res.data) {
+                    const { client, proposals, recentHistory } = res.data;
+                    
+                    document.getElementById('greetingTitle').textContent = `Olá, ${client.name}`;
+                    document.getElementById('sidebarClientName').textContent = client.name;
+                    document.getElementById('sidebarClientCPF').textContent = `CPF: ${client.cpf}`;
+                    if (client.avatarUrl) {
+                        document.getElementById('sidebarAvatar').src = client.avatarUrl;
+                    }
+
+                    renderProposals(proposals);
+                    renderTimeline(recentHistory);
+                    window.showToast(`Dados de ${client.name} carregados com sucesso!`, 'success');
+                } else {
+                    window.showToast(res.error || 'Cliente não encontrado.', 'error');
+                }
+            } catch (err) {
+                window.showToast('Erro ao consultar dados.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Buscar';
+            }
+        }
+
+        // Event Listeners
+        document.getElementById('btnSearchCPF').addEventListener('click', () => {
+            const cpf = document.getElementById('cpf-search').value.trim();
+            if (cpf) fetchClientData(cpf);
+        });
+
+        document.getElementById('cpf-search').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const cpf = document.getElementById('cpf-search').value.trim();
+                if (cpf) fetchClientData(cpf);
+            }
+        });
+
+        // Carrega dados iniciais com o CPF padrão
+        fetchClientData('123.456.789-00');
+    </script>
+</body>
+</html>
