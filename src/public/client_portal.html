@@ -219,6 +219,143 @@
     <!-- Scripts de Integração com o Backend / Local -->
     <script src="js/api.js"></script>
     <script>
+        // Base de Demonstração Offline Garantida (CPFs de teste)
+        function getFallbackClientData(cpf) {
+            const raw = String(cpf || '').replace(/\D/g, '');
+            const database = {
+                '12345678900': {
+                    client: {
+                        id: 1,
+                        name: 'João Silva',
+                        cpf: '123.456.789-00',
+                        email: 'joao.silva@email.com',
+                        phone: '(11) 98765-4321',
+                        avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBW12h1y0KEC7l-2G0Wt1dVII12EbfpxIgSz31C_xXtK2e5XduWdE5i7QOc64Ic_Ss1A1wM912JNkm_BiyGHWwDc27lnvYcBD8e1mDK7jNK9UYbg6i0RYzvwLTnQI7XAnPg-N47JTENhVe0k_ftIyHWKfka54AIgaTzYQyxS8hgzp2nTqYZ_mJTD1K3S2mNk4d2f_nLhVXOkbQ0DRwt9qLqru7j1r-mTe4SLd-YiHgEPXdlwX3GiLQ'
+                    },
+                    proposals: [
+                        {
+                            id: 1,
+                            contract_number: '49281-IMOB',
+                            service_type: 'FIN_IMOB',
+                            title: 'Financiamento Imobiliário',
+                            started_at: '12/09/2023',
+                            status_label: 'Em Andamento',
+                            current_step: 3,
+                            amount: 380000.00,
+                            monthly_installment: 2780.45,
+                            term_months: 360
+                        },
+                        {
+                            id: 2,
+                            contract_number: '8832-FGTS',
+                            service_type: 'FGTS_ANIVERSARIO',
+                            title: 'Empréstimo Saque-Aniversário FGTS',
+                            started_at: '24/10/2023',
+                            status_label: 'Análise Inicial',
+                            current_step: 1,
+                            amount: 14500.00,
+                            monthly_installment: 0,
+                            term_months: 60
+                        }
+                    ],
+                    recentHistory: [
+                        {
+                            title: 'Contratos Gerados',
+                            proposal_title: 'Financiamento Imobiliário',
+                            event_time: 'Hoje, 10:45',
+                            icon: 'drafts',
+                            description: 'Os contratos foram emitidos e enviados para sua área de assinatura digital.'
+                        },
+                        {
+                            title: 'Crédito Aprovado',
+                            proposal_title: 'Financiamento Imobiliário',
+                            event_time: 'Ontem, 16:30',
+                            icon: 'check_circle',
+                            description: 'Análise de crédito concluída com sucesso pelo banco emissor.'
+                        },
+                        {
+                            title: 'Documentação Recebida',
+                            proposal_title: 'Empréstimo FGTS',
+                            event_time: '24/10/2023, 09:15',
+                            icon: 'upload_file',
+                            description: 'Todos os documentos necessários foram anexados ao processo de antecipação.'
+                        }
+                    ]
+                },
+                '23456789011': {
+                    client: {
+                        id: 2,
+                        name: 'Maria Aparecida Souza',
+                        cpf: '234.567.890-11',
+                        email: 'maria.souza@email.com',
+                        phone: '(11) 97654-3210',
+                        avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC40sYxY2uo00-Lq7ObFWLdUcaix7AjLW6wt0OeqLe1z8_d8IS3BYz3LRlf1QJefHrWSY0Aqk9Pi5RIEA3Y8nMoOgzsT7H1xUUoBQwhO72__nWg0YIekRsnnWFR5NBZFHRNPFzTZTNbxUoZY1iHnO19v4FS0xLQ3Lpo7MlRo08k8yO-2viv6wTL1CQFK-FV4FnHrrxMX9qICPP3PdkctM8oODYyFvUvxuwd26r9bx2R0wergEq3W-I'
+                    },
+                    proposals: [
+                        {
+                            id: 3,
+                            contract_number: '77123-INSS',
+                            service_type: 'CONSIGNADO_INSS',
+                            title: 'Empréstimo Consignado INSS',
+                            started_at: '01/08/2023',
+                            status_label: 'Crédito Liberado',
+                            current_step: 4,
+                            amount: 22000.00,
+                            monthly_installment: 485.30,
+                            term_months: 84
+                        }
+                    ],
+                    recentHistory: [
+                        {
+                            title: 'Recurso Creditado',
+                            proposal_title: 'Empréstimo Consignado INSS',
+                            event_time: '10/08/2023, 11:30',
+                            icon: 'account_balance_wallet',
+                            description: 'Valor de R$ 22.000,00 depositado com sucesso via TED na conta do cliente.'
+                        }
+                    ]
+                },
+                '34567890122': {
+                    client: {
+                        id: 3,
+                        name: 'Carlos Eduardo Mendes',
+                        cpf: '345.678.901-22',
+                        email: 'carlos.mendes@email.com',
+                        phone: '(21) 99887-1122',
+                        avatarUrl: ''
+                    },
+                    proposals: [
+                        {
+                            id: 4,
+                            contract_number: '99412-CONS',
+                            service_type: 'CONS_IMOB',
+                            title: 'Consórcio de Imóvel',
+                            started_at: '05/08/2023',
+                            status_label: 'Cota Ativada / Grupo 410',
+                            current_step: 2,
+                            amount: 500000.00,
+                            monthly_installment: 2458.33,
+                            term_months: 240
+                        }
+                    ],
+                    recentHistory: [
+                        {
+                            title: 'Cota Contemplável Criada',
+                            proposal_title: 'Consórcio Imobiliário',
+                            event_time: '10/08/2023, 11:00',
+                            icon: 'verified',
+                            description: 'Grupo 410, Cota 291 emitida com sucesso na administradora.'
+                        }
+                    ]
+                }
+            };
+            const found = database[raw];
+            if (found) {
+                return { success: true, data: found };
+            }
+            return { success: false, error: 'Cliente não localizado para o CPF informado.' };
+        }
+
         // Renderiza o Stepper de 4 Etapas
         function renderStepper(currentStep) {
             const steps = [
@@ -244,9 +381,9 @@
                             const isFuture = step.num > currentStep;
 
                             let icon = step.defaultIcon;
-                            let circleClass = 'bg-surface-container-high text-on-surface-variant opacity-50';
+                            let circleClass = 'bg-surface-container-high text-on-surface-variant';
                             let statusText = 'Pendente';
-                            let statusClass = 'text-on-surface-variant opacity-70';
+                            let statusClass = 'text-on-surface-variant';
 
                             if (isCompleted) {
                                 icon = 'check';
@@ -255,12 +392,12 @@
                                 statusClass = 'text-secondary font-medium';
                             } else if (isActive) {
                                 circleClass = 'bg-tertiary-fixed-dim text-on-tertiary-fixed-variant shadow-[0_0_0_4px_rgba(255,185,95,0.25)] ring-2 ring-tertiary-fixed';
-                                statusText = 'Em andamento';
+                                statusText = step.num === 1 ? 'Em processamento' : step.num === 3 ? 'Aguardando Cliente' : 'Em andamento';
                                 statusClass = 'text-on-surface font-bold';
                             }
 
                             return `
-                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center">
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center ${isFuture ? 'opacity-50' : ''}">
                                     <div class="w-10 h-10 rounded-full ${circleClass} flex items-center justify-center shrink-0 transition-all duration-300">
                                         <span class="material-symbols-outlined text-xl">${icon}</span>
                                     </div>
@@ -307,15 +444,24 @@
                 };
                 const icon = iconMap[prop.service_type] || 'payments';
 
-                const formattedAmount = Number(prop.amount).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                const formattedAmount = Number(prop.amount || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 const formattedInstallment = prop.monthly_installment > 0 
                     ? Number(prop.monthly_installment).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
                     : 'Desconto Anual / Isento';
 
-                const isCompleted = prop.status === 'CONCLUIDO';
-                const badgeColor = isCompleted 
-                    ? 'bg-secondary-container text-on-secondary-container' 
-                    : prop.current_step === 1 ? 'bg-surface-container-high text-on-surface-variant' : 'bg-secondary-container text-on-secondary-container';
+                const badgeClass = prop.current_step === 1 
+                    ? 'bg-surface-container-high text-on-surface-variant font-status-badge text-status-badge px-3 py-1 rounded-full font-bold' 
+                    : 'bg-secondary-container text-on-secondary-container font-status-badge text-status-badge px-3 py-1 rounded-full font-bold';
+
+                let dateFormatted = '12/09/2023';
+                if (prop.started_at) {
+                    if (String(prop.started_at).includes('/')) {
+                        dateFormatted = prop.started_at;
+                    } else {
+                        const d = new Date(prop.started_at);
+                        dateFormatted = isNaN(d.getTime()) ? prop.started_at : d.toLocaleDateString('pt-BR');
+                    }
+                }
 
                 return `
                     <div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant p-6 md:p-8">
@@ -327,10 +473,10 @@
                                     </div>
                                     <h2 class="font-headline-sm text-headline-sm text-on-surface">${prop.title}</h2>
                                 </div>
-                                <p class="text-sm text-on-surface-variant">Contrato #${prop.contract_number} • Iniciado em ${new Date(prop.started_at || Date.now()).toLocaleDateString('pt-BR')}</p>
+                                <p class="text-sm text-on-surface-variant">Contrato #${prop.contract_number} • Iniciado em ${dateFormatted}</p>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="${badgeColor} font-status-badge text-status-badge px-3.5 py-1 rounded-full font-bold">
+                                <span class="${badgeClass}">
                                     ${prop.status_label || prop.step_name}
                                 </span>
                             </div>
@@ -368,7 +514,13 @@
             }
 
             container.innerHTML = events.map((ev, index) => {
-                const dateStr = new Date(ev.event_time).toLocaleDateString('pt-BR') + ' às ' + new Date(ev.event_time).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+                let dateStr = ev.event_time;
+                if (ev.event_time && !ev.event_time.includes('Hoje') && !ev.event_time.includes('Ontem') && !ev.event_time.includes('/')) {
+                    const d = new Date(ev.event_time);
+                    if (!isNaN(d.getTime())) {
+                        dateStr = d.toLocaleDateString('pt-BR') + ' às ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+                    }
+                }
                 return `
                     <div class="relative flex items-start gap-4">
                         <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary">
@@ -387,32 +539,64 @@
         // Busca Cliente por CPF
         async function fetchClientData(cpf) {
             const btn = document.getElementById('btnSearchCPF');
-            btn.disabled = true;
-            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">progress_activity</span>';
+            if (btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">progress_activity</span>';
+            }
 
             try {
-                const res = await window.api.searchClientByCPF(cpf);
-                if (res.success && res.data) {
+                let res = null;
+                // Tenta consultar a API REST se estiver online
+                if (window.api && typeof window.api.searchClientByCPF === 'function') {
+                    try {
+                        res = await window.api.searchClientByCPF(cpf);
+                    } catch (e) {
+                        console.warn('API indisponível, usando fallback local:', e);
+                    }
+                }
+
+                // Se a API não respondeu ou não encontrou, usa a base demonstrativa
+                if (!res || !res.success || !res.data) {
+                    res = getFallbackClientData(cpf);
+                }
+
+                if (res && res.success && res.data) {
                     const { client, proposals, recentHistory } = res.data;
                     
                     document.getElementById('greetingTitle').textContent = `Olá, ${client.name}`;
-                    document.getElementById('sidebarClientName').textContent = client.name;
-                    document.getElementById('sidebarClientCPF').textContent = `CPF: ${client.cpf}`;
-                    if (client.avatarUrl) {
-                        document.getElementById('sidebarAvatar').src = client.avatarUrl;
+                    const sidebarName = document.getElementById('sidebarClientName');
+                    if (sidebarName) sidebarName.textContent = client.name;
+                    const sidebarCPF = document.getElementById('sidebarClientCPF');
+                    if (sidebarCPF) sidebarCPF.textContent = `CPF: ${client.cpf}`;
+                    const sidebarAvatar = document.getElementById('sidebarAvatar');
+                    if (sidebarAvatar && client.avatarUrl) {
+                        sidebarAvatar.src = client.avatarUrl;
                     }
 
                     renderProposals(proposals);
                     renderTimeline(recentHistory);
-                    window.showToast(`Dados de ${client.name} carregados com sucesso!`, 'success');
+                    if (typeof window.showToast === 'function') {
+                        window.showToast(`Dados de ${client.name} carregados com sucesso!`, 'success');
+                    }
                 } else {
-                    window.showToast(res.error || 'Cliente não encontrado.', 'error');
+                    const errorMsg = (res && res.error) ? res.error : 'Cliente não localizado para o CPF informado.';
+                    if (typeof window.showToast === 'function') {
+                        window.showToast(errorMsg, 'error');
+                    }
                 }
             } catch (err) {
-                window.showToast('Erro ao consultar dados.', 'error');
+                console.error(err);
+                const fallback = getFallbackClientData(cpf);
+                if (fallback && fallback.success && fallback.data) {
+                    document.getElementById('greetingTitle').textContent = `Olá, ${fallback.data.client.name}`;
+                    renderProposals(fallback.data.proposals);
+                    renderTimeline(fallback.data.recentHistory);
+                }
             } finally {
-                btn.disabled = false;
-                btn.textContent = 'Buscar';
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = 'Buscar';
+                }
             }
         }
 

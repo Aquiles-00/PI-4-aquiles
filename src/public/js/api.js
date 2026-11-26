@@ -390,7 +390,7 @@ function isOfflineMode() {
 
 const API_BASE = '/api';
 
-export const api = {
+const api = {
     // Simulações Financeiras
     async calculateSimulation(payload) {
         if (!isOfflineMode()) {
@@ -630,7 +630,7 @@ export const api = {
 };
 
 // Notificação toast elegante
-export function showToast(message, type = 'success') {
+function showToast(message, type = 'success') {
     let toastContainer = document.getElementById('toast-container');
     if (!toastContainer) {
         toastContainer = document.createElement('div');
