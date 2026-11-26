@@ -170,12 +170,17 @@
             <!-- Search Bar por CPF -->
             <div class="mb-8 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
                 <label class="block font-label-md text-label-md font-bold text-on-surface mb-2" for="cpf-search">Pesquisar processos por CPF</label>
-                <div class="relative flex items-center">
+                <form id="searchForm" onsubmit="handleSearch(event); return false;" class="relative flex items-center">
                     <span class="material-symbols-outlined absolute left-4 text-on-surface-variant">search</span>
-                    <input class="w-full pl-12 pr-28 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary transition-all text-on-surface placeholder:text-on-surface-variant font-medium" id="cpf-search" placeholder="Digite seu CPF (ex: 123.456.789-00)..." type="text" value="123.456.789-00"/>
-                    <button id="btnSearchCPF" class="absolute right-2 bg-secondary text-on-secondary px-6 py-2 rounded-lg font-label-md text-label-md font-bold hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors">
-                        Buscar
+                    <input class="w-full pl-12 pr-32 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary focus:border-secondary transition-all text-on-surface placeholder:text-on-surface-variant font-medium" id="cpf-search" placeholder="Digite seu CPF (ex: 123.456.789-00)..." type="text" value="123.456.789-00" onkeydown="if(event.key==='Enter'){handleSearch(event);}"/>
+                    <button id="btnSearchCPF" type="button" onclick="handleSearch(event)" class="absolute right-2 bg-secondary text-on-secondary px-5 py-2 rounded-lg font-label-md text-label-md font-bold hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors shadow-sm flex items-center gap-1.5 cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">search</span>
+                        <span id="btnSearchText">Buscar</span>
                     </button>
+                </form>
+                <div class="flex items-center justify-between mt-2 text-xs text-on-surface-variant">
+                    <span>💡 Digite o CPF e clique em <b>Buscar</b> (ex: <span class="font-semibold text-primary cursor-pointer underline" onclick="document.getElementById('cpf-search').value='123.456.789-00'; handleSearch(event);">123.456.789-00</span>)</span>
+                    <span id="searchStatusFeedback" class="text-secondary font-medium"></span>
                 </div>
             </div>
 
@@ -183,7 +188,195 @@
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
                 <!-- Main Process Area (2 Cols) -->
                 <div class="xl:col-span-2 flex flex-col gap-8" id="processesContainer">
-                    <!-- Cards de Processo serão renderizados dinamicamente aqui -->
+                    <!-- Card 1: Financiamento Imobiliário (Pré-renderizado padrão João Silva) -->
+                    <div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+                                        <span class="material-symbols-outlined">real_estate_agent</span>
+                                    </div>
+                                    <h2 class="font-headline-sm text-headline-sm text-on-surface">Financiamento Imobiliário Residencial (SBPE)</h2>
+                                </div>
+                                <p class="text-sm text-on-surface-variant">Contrato #49281-IMOB • Iniciado em 12/09/2023</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="bg-secondary-container text-on-secondary-container font-status-badge text-status-badge px-3.5 py-1 rounded-full font-bold">
+                                    Em Andamento
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Stepper Visual -->
+                        <div class="mb-8 relative">
+                            <div class="absolute top-5 left-8 right-8 h-1 bg-surface-container-high -translate-y-1/2 z-0 hidden sm:block"></div>
+                            <div class="absolute top-5 left-8 h-1 bg-secondary -translate-y-1/2 z-0 hidden sm:block transition-all duration-500" style="width: 66%;"></div>
+                            <div class="relative z-10 flex flex-col sm:flex-row justify-between gap-6 sm:gap-0">
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center">
+                                    <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary shadow-sm flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">check</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md text-on-surface">Análise</div>
+                                        <div class="text-xs text-secondary font-medium">Concluído</div>
+                                    </div>
+                                </div>
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center">
+                                    <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary shadow-sm flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">check</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md text-on-surface">Aprovação</div>
+                                        <div class="text-xs text-secondary font-medium">Concluído</div>
+                                    </div>
+                                </div>
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center">
+                                    <div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed-variant shadow-[0_0_0_4px_rgba(255,185,95,0.25)] ring-2 ring-tertiary-fixed flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">edit_document</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md font-bold text-on-surface">Assinatura</div>
+                                        <div class="text-xs text-on-surface font-bold">Aguardando Cliente</div>
+                                    </div>
+                                </div>
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center opacity-50">
+                                    <div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md text-on-surface">Liberação</div>
+                                        <div class="text-xs text-on-surface-variant">Pendente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bloco de Status Atual em Destaque -->
+                        <div class="mb-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/40">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                                    Status Atual do Processo
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-300">
+                                    Etapa 3 de 4 (75% concluído)
+                                </span>
+                            </div>
+                            <div class="font-bold text-on-surface text-base mb-1">Aguardando Assinatura do Contrato</div>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Análise de crédito e avaliação do imóvel concluídas com sucesso. O contrato foi emitido pelo banco e está pronto para a sua assinatura eletrônica.</p>
+                        </div>
+
+                        <!-- Detalhes do Processo -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-outline-variant/30 text-sm">
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Valor da Operação</div>
+                                <div class="font-bold text-on-surface">R$ 380.000,00</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Parcela Mensal</div>
+                                <div class="font-bold text-secondary">R$ 2.780,45</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Prazo</div>
+                                <div class="font-bold text-on-surface">360 meses</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Empréstimo FGTS -->
+                    <div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant p-6 md:p-8">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+                                        <span class="material-symbols-outlined">savings</span>
+                                    </div>
+                                    <h2 class="font-headline-sm text-headline-sm text-on-surface">Empréstimo Saque-Aniversário FGTS</h2>
+                                </div>
+                                <p class="text-sm text-on-surface-variant">Contrato #8832-FGTS • Iniciado em 24/10/2023</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="bg-surface-container-high text-on-surface-variant font-status-badge text-status-badge px-3 py-1 rounded-full font-bold">
+                                    Análise Inicial
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Stepper Visual -->
+                        <div class="mb-8 relative">
+                            <div class="absolute top-5 left-8 right-8 h-1 bg-surface-container-high -translate-y-1/2 z-0 hidden sm:block"></div>
+                            <div class="absolute top-5 left-8 h-1 bg-secondary -translate-y-1/2 z-0 hidden sm:block transition-all duration-500" style="width: 0%;"></div>
+                            <div class="relative z-10 flex flex-col sm:flex-row justify-between gap-6 sm:gap-0">
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center">
+                                    <div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed-variant shadow-[0_0_0_4px_rgba(255,185,95,0.25)] ring-2 ring-tertiary-fixed flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">search</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md font-bold text-on-surface">Análise</div>
+                                        <div class="text-xs text-on-surface font-bold">Em processamento</div>
+                                    </div>
+                                </div>
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center opacity-50">
+                                    <div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">thumb_up</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md text-on-surface">Aprovação</div>
+                                        <div class="text-xs text-on-surface-variant">Pendente</div>
+                                    </div>
+                                </div>
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center opacity-50">
+                                    <div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">edit_document</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md text-on-surface">Assinatura</div>
+                                        <div class="text-xs text-on-surface-variant">Pendente</div>
+                                    </div>
+                                </div>
+                                <div class="flex sm:flex-col items-center gap-4 sm:gap-2 text-center opacity-50">
+                                    <div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+                                        <span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+                                    </div>
+                                    <div class="text-left sm:text-center">
+                                        <div class="font-label-md text-label-md text-on-surface">Liberação</div>
+                                        <div class="text-xs text-on-surface-variant">Pendente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bloco de Status Atual em Destaque -->
+                        <div class="mb-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/40">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                                    Status Atual do Processo
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface">
+                                    Etapa 1 de 4 (25% concluído)
+                                </span>
+                            </div>
+                            <div class="font-bold text-on-surface text-base mb-1">Análise e Reserva de Saldo FGTS</div>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">Documentação recebida e autorização bancária validada. Saldo de R$ 18.250,00 reservado junto à Caixa Econômica Federal.</p>
+                        </div>
+
+                        <!-- Detalhes do Processo -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-outline-variant/30 text-sm">
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Valor Antecipado</div>
+                                <div class="font-bold text-on-surface">R$ 14.500,00</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Parcela Mensal</div>
+                                <div class="font-bold text-secondary">Desconto Anual FGTS</div>
+                            </div>
+                            <div>
+                                <div class="text-xs text-on-surface-variant">Período Antecipado</div>
+                                <div class="font-bold text-on-surface">5 anos</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Side Panel (History & Support) -->
@@ -195,7 +388,57 @@
                             Histórico Recente
                         </h3>
                         <div class="space-y-6" id="timelineContainer">
-                            <!-- Eventos serão renderizados dinamicamente aqui -->
+                            <!-- Eventos Pré-renderizados -->
+                            <div class="relative flex items-start gap-4 pb-4 border-b border-outline-variant/20">
+                                <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary shadow-sm">
+                                    <span class="material-symbols-outlined text-sm">drafts</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-label-md text-label-md font-bold text-on-surface">Contratos Emitidos para Assinatura</div>
+                                    <div class="text-xs text-on-surface-variant mb-1 font-medium">Financiamento Imobiliário #49281-IMOB • Hoje, às 10:45</div>
+                                    <p class="text-sm text-on-surface leading-relaxed">A minuta do contrato de financiamento foi gerada pelo banco e enviada para o seu e-mail para assinatura digital.</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start gap-4 pb-4 border-b border-outline-variant/20">
+                                <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary shadow-sm">
+                                    <span class="material-symbols-outlined text-sm">check_circle</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-label-md text-label-md font-bold text-on-surface">Crédito Aprovado pelo Banco Emissor</div>
+                                    <div class="text-xs text-on-surface-variant mb-1 font-medium">Financiamento Imobiliário #49281-IMOB • Ontem, às 16:30</div>
+                                    <p class="text-sm text-on-surface leading-relaxed">Avaliação de crédito concluída com sucesso. Limite de R$ 380.000,00 liberado com taxa de 9,99% ao ano.</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start gap-4 pb-4 border-b border-outline-variant/20">
+                                <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary shadow-sm">
+                                    <span class="material-symbols-outlined text-sm">real_estate_agent</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-label-md text-label-md font-bold text-on-surface">Laudo de Avaliação do Imóvel Aprovado</div>
+                                    <div class="text-xs text-on-surface-variant mb-1 font-medium">Financiamento Imobiliário #49281-IMOB • 24/10/2023, às 14:00</div>
+                                    <p class="text-sm text-on-surface leading-relaxed">Engenheiro credenciado realizou a vistoria e homologou o laudo técnico do imóvel sem pendências.</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start gap-4 pb-4 border-b border-outline-variant/20">
+                                <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary shadow-sm">
+                                    <span class="material-symbols-outlined text-sm">upload_file</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-label-md text-label-md font-bold text-on-surface">Documentação Recebida e Homologada</div>
+                                    <div class="text-xs text-on-surface-variant mb-1 font-medium">Financiamento Imobiliário #49281-IMOB • 18/10/2023, às 11:15</div>
+                                    <p class="text-sm text-on-surface leading-relaxed">Certidões negativas, comprovantes de renda e documentos foram validados pelo setor de crédito.</p>
+                                </div>
+                            </div>
+                            <div class="relative flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary shadow-sm">
+                                    <span class="material-symbols-outlined text-sm">savings</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-label-md text-label-md font-bold text-on-surface">Consulta e Reserva de Saldo FGTS</div>
+                                    <div class="text-xs text-on-surface-variant mb-1 font-medium">Empréstimo FGTS #8832-FGTS • Hoje, às 09:10</div>
+                                    <p class="text-sm text-on-surface leading-relaxed">Saldo de R$ 18.250,00 consultado e bloqueado com sucesso na Caixa para antecipação do Saque-Aniversário.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -219,173 +462,174 @@
     <!-- Scripts de Integração com o Backend / Local -->
     <script src="js/api.js"></script>
     <script>
-        // Base de Demonstração Offline Garantida (Status Fictício Completo)
-        function getFallbackClientData(cpf) {
-            const raw = String(cpf || '').replace(/\D/g, '');
-            const database = {
-                '12345678900': {
-                    client: {
+        // Base de Dados de Demonstração (Instantânea e 100% Garantida)
+        const CLIENTS_DATABASE = {
+            '12345678900': {
+                client: {
+                    id: 1,
+                    name: 'João Silva',
+                    cpf: '123.456.789-00',
+                    email: 'joao.silva@email.com',
+                    phone: '(11) 98765-4321',
+                    avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBW12h1y0KEC7l-2G0Wt1dVII12EbfpxIgSz31C_xXtK2e5XduWdE5i7QOc64Ic_Ss1A1wM912JNkm_BiyGHWwDc27lnvYcBD8e1mDK7jNK9UYbg6i0RYzvwLTnQI7XAnPg-N47JTENhVe0k_ftIyHWKfka54AIgaTzYQyxS8hgzp2nTqYZ_mJTD1K3S2mNk4d2f_nLhVXOkbQ0DRwt9qLqru7j1r-mTe4SLd-YiHgEPXdlwX3GiLQ'
+                },
+                proposals: [
+                    {
                         id: 1,
-                        name: 'João Silva',
-                        cpf: '123.456.789-00',
-                        email: 'joao.silva@email.com',
-                        phone: '(11) 98765-4321',
-                        avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBW12h1y0KEC7l-2G0Wt1dVII12EbfpxIgSz31C_xXtK2e5XduWdE5i7QOc64Ic_Ss1A1wM912JNkm_BiyGHWwDc27lnvYcBD8e1mDK7jNK9UYbg6i0RYzvwLTnQI7XAnPg-N47JTENhVe0k_ftIyHWKfka54AIgaTzYQyxS8hgzp2nTqYZ_mJTD1K3S2mNk4d2f_nLhVXOkbQ0DRwt9qLqru7j1r-mTe4SLd-YiHgEPXdlwX3GiLQ'
+                        contract_number: '49281-IMOB',
+                        service_type: 'FIN_IMOB',
+                        title: 'Financiamento Imobiliário Residencial (SBPE)',
+                        started_at: '12/09/2023',
+                        status_label: 'Em Andamento',
+                        current_step: 3,
+                        step_name: 'ASSINATURA',
+                        amount: 380000.00,
+                        down_payment: 95000.00,
+                        monthly_installment: 2780.45,
+                        term_months: 360,
+                        status_title: 'Aguardando Assinatura do Contrato',
+                        status_desc: 'Análise de crédito e avaliação do imóvel concluídas com sucesso. O contrato foi emitido pelo banco e está pronto para a sua assinatura eletrônica.',
+                        step_tag: 'Aguardando Cliente'
                     },
-                    proposals: [
-                        {
-                            id: 1,
-                            contract_number: '49281-IMOB',
-                            service_type: 'FIN_IMOB',
-                            title: 'Financiamento Imobiliário Residencial (SBPE)',
-                            started_at: '12/09/2023',
-                            status_label: 'Em Andamento',
-                            current_step: 3,
-                            step_name: 'ASSINATURA',
-                            amount: 380000.00,
-                            down_payment: 95000.00,
-                            monthly_installment: 2780.45,
-                            term_months: 360,
-                            status_title: 'Aguardando Assinatura do Contrato',
-                            status_desc: 'Análise de crédito e avaliação do imóvel concluídas com sucesso. O contrato está pronto para a sua assinatura eletrônica.',
-                            step_tag: 'Aguardando Cliente'
-                        },
-                        {
-                            id: 2,
-                            contract_number: '8832-FGTS',
-                            service_type: 'FGTS_ANIVERSARIO',
-                            title: 'Empréstimo Saque-Aniversário FGTS',
-                            started_at: '24/10/2023',
-                            status_label: 'Análise Inicial',
-                            current_step: 1,
-                            step_name: 'ANALISE',
-                            amount: 14500.00,
-                            down_payment: 0.00,
-                            monthly_installment: 0,
-                            term_months: 60,
-                            status_title: 'Análise e Reserva de Saldo FGTS',
-                            status_desc: 'Documentação recebida e autorização bancária validada. Saldo de R$ 18.250,00 reservado junto à Caixa Econômica.',
-                            step_tag: 'Em Processamento'
-                        }
-                    ],
-                    recentHistory: [
-                        {
-                            title: 'Contratos Emitidos para Assinatura',
-                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
-                            event_time: 'Hoje, às 10:45',
-                            icon: 'drafts',
-                            description: 'A minuta do contrato de financiamento foi gerada pelo banco e enviada para o seu e-mail para assinatura digital.'
-                        },
-                        {
-                            title: 'Crédito Aprovado pelo Banco Emissor',
-                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
-                            event_time: 'Ontem, às 16:30',
-                            icon: 'check_circle',
-                            description: 'Avaliação de crédito concluída com sucesso. Limite de R$ 380.000,00 liberado com taxa de 9,99% ao ano.'
-                        },
-                        {
-                            title: 'Laudo de Avaliação do Imóvel Aprovado',
-                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
-                            event_time: '24/10/2023, às 14:00',
-                            icon: 'real_estate_agent',
-                            description: 'Engenheiro credenciado realizou a vistoria e homologou o laudo técnico do imóvel sem pendências.'
-                        },
-                        {
-                            title: 'Documentação Recebida e Homologada',
-                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
-                            event_time: '18/10/2023, às 11:15',
-                            icon: 'upload_file',
-                            description: 'Certidões negativas, comprovantes de renda e documentos foram validados pelo setor de crédito.'
-                        },
-                        {
-                            title: 'Consulta e Reserva de Saldo FGTS',
-                            proposal_title: 'Empréstimo FGTS #8832-FGTS',
-                            event_time: 'Hoje, às 09:10',
-                            icon: 'savings',
-                            description: 'Saldo de R$ 18.250,00 consultado e bloqueado com sucesso na Caixa para antecipação do Saque-Aniversário.'
-                        }
-                    ]
-                },
-                '23456789011': {
-                    client: {
+                    {
                         id: 2,
-                        name: 'Maria Aparecida Souza',
-                        cpf: '234.567.890-11',
-                        email: 'maria.souza@email.com',
-                        phone: '(11) 97654-3210',
-                        avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC40sYxY2uo00-Lq7ObFWLdUcaix7AjLW6wt0OeqLe1z8_d8IS3BYz3LRlf1QJefHrWSY0Aqk9Pi5RIEA3Y8nMoOgzsT7H1xUUoBQwhO72__nWg0YIekRsnnWFR5NBZFHRNPFzTZTNbxUoZY1iHnO19v4FS0xLQ3Lpo7MlRo08k8yO-2viv6wTL1CQFK-FV4FnHrrxMX9qICPP3PdkctM8oODYyFvUvxuwd26r9bx2R0wergEq3W-I'
+                        contract_number: '8832-FGTS',
+                        service_type: 'FGTS_ANIVERSARIO',
+                        title: 'Empréstimo Saque-Aniversário FGTS',
+                        started_at: '24/10/2023',
+                        status_label: 'Análise Inicial',
+                        current_step: 1,
+                        step_name: 'ANALISE',
+                        amount: 14500.00,
+                        down_payment: 0.00,
+                        monthly_installment: 0,
+                        term_months: 60,
+                        status_title: 'Análise e Reserva de Saldo FGTS',
+                        status_desc: 'Documentação recebida e autorização bancária validada. Saldo de R$ 18.250,00 reservado junto à Caixa Econômica Federal.',
+                        step_tag: 'Em Processamento'
+                    }
+                ],
+                recentHistory: [
+                    {
+                        title: 'Contratos Emitidos para Assinatura',
+                        proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                        event_time: 'Hoje, às 10:45',
+                        icon: 'drafts',
+                        description: 'A minuta do contrato de financiamento foi gerada pelo banco e enviada para o seu e-mail para assinatura digital.'
                     },
-                    proposals: [
-                        {
-                            id: 3,
-                            contract_number: '77123-INSS',
-                            service_type: 'CONSIGNADO_INSS',
-                            title: 'Empréstimo Consignado INSS',
-                            started_at: '01/08/2023',
-                            status_label: 'Crédito Liberado',
-                            current_step: 4,
-                            step_name: 'LIBERACAO',
-                            amount: 22000.00,
-                            monthly_installment: 485.30,
-                            term_months: 84,
-                            status_title: 'Crédito Concluído e Depositado',
-                            status_desc: 'Processo 100% finalizado. O recurso financeiro de R$ 22.000,00 foi creditado em sua conta corrente.',
-                            step_tag: 'Concluído'
-                        }
-                    ],
-                    recentHistory: [
-                        {
-                            title: 'Recurso Creditado via TED',
-                            proposal_title: 'Empréstimo Consignado INSS #77123-INSS',
-                            event_time: '10/08/2023, às 11:30',
-                            icon: 'account_balance_wallet',
-                            description: 'Valor de R$ 22.000,00 depositado com sucesso via TED na conta corrente cadastrada.'
-                        }
-                    ]
+                    {
+                        title: 'Crédito Aprovado pelo Banco Emissor',
+                        proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                        event_time: 'Ontem, às 16:30',
+                        icon: 'check_circle',
+                        description: 'Avaliação de crédito concluída com sucesso. Limite de R$ 380.000,00 liberado com taxa de 9,99% ao ano.'
+                    },
+                    {
+                        title: 'Laudo de Avaliação do Imóvel Aprovado',
+                        proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                        event_time: '24/10/2023, às 14:00',
+                        icon: 'real_estate_agent',
+                        description: 'Engenheiro credenciado realizou a vistoria e homologou o laudo técnico do imóvel sem pendências.'
+                    },
+                    {
+                        title: 'Documentação Recebida e Homologada',
+                        proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                        event_time: '18/10/2023, às 11:15',
+                        icon: 'upload_file',
+                        description: 'Certidões negativas, comprovantes de renda e documentos foram validados pelo setor de crédito.'
+                    },
+                    {
+                        title: 'Consulta e Reserva de Saldo FGTS',
+                        proposal_title: 'Empréstimo FGTS #8832-FGTS',
+                        event_time: 'Hoje, às 09:10',
+                        icon: 'savings',
+                        description: 'Saldo de R$ 18.250,00 consultado e bloqueado com sucesso na Caixa para antecipação do Saque-Aniversário.'
+                    }
+                ]
+            },
+            '23456789011': {
+                client: {
+                    id: 2,
+                    name: 'Maria Aparecida Souza',
+                    cpf: '234.567.890-11',
+                    email: 'maria.souza@email.com',
+                    phone: '(11) 97654-3210',
+                    avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC40sYxY2uo00-Lq7ObFWLdUcaix7AjLW6wt0OeqLe1z8_d8IS3BYz3LRlf1QJefHrWSY0Aqk9Pi5RIEA3Y8nMoOgzsT7H1xUUoBQwhO72__nWg0YIekRsnnWFR5NBZFHRNPFzTZTNbxUoZY1iHnO19v4FS0xLQ3Lpo7MlRo08k8yO-2viv6wTL1CQFK-FV4FnHrrxMX9qICPP3PdkctM8oODYyFvUvxuwd26r9bx2R0wergEq3W-I'
                 },
-                '34567890122': {
-                    client: {
+                proposals: [
+                    {
                         id: 3,
-                        name: 'Carlos Eduardo Mendes',
-                        cpf: '345.678.901-22',
-                        email: 'carlos.mendes@email.com',
-                        phone: '(21) 99887-1122',
-                        avatarUrl: ''
-                    },
-                    proposals: [
-                        {
-                            id: 4,
-                            contract_number: '99412-CONS',
-                            service_type: 'CONS_IMOB',
-                            title: 'Consórcio Imobiliário',
-                            started_at: '05/08/2023',
-                            status_label: 'Cota Ativada',
-                            current_step: 2,
-                            step_name: 'APROVACAO',
-                            amount: 500000.00,
-                            monthly_installment: 2458.33,
-                            term_months: 240,
-                            status_title: 'Cota Ativa e Homologada',
-                            status_desc: 'Sua cota foi aprovada e integrada ao Grupo 410. Você já pode ofertar lances nas assembleias mensais.',
-                            step_tag: 'Ativo'
-                        }
-                    ],
-                    recentHistory: [
-                        {
-                            title: 'Cota Contemplável Criada',
-                            proposal_title: 'Consórcio Imobiliário #99412-CONS',
-                            event_time: '10/08/2023, às 11:00',
-                            icon: 'verified',
-                            description: 'Grupo 410, Cota 291 emitida com sucesso na administradora autorizada pelo Banco Central.'
-                        }
-                    ]
-                }
-            };
-            const found = database[raw];
-            if (found) {
-                return { success: true, data: found };
+                        contract_number: '77123-INSS',
+                        service_type: 'CONSIGNADO_INSS',
+                        title: 'Empréstimo Consignado INSS',
+                        started_at: '01/08/2023',
+                        status_label: 'Crédito Liberado',
+                        current_step: 4,
+                        step_name: 'LIBERACAO',
+                        amount: 22000.00,
+                        monthly_installment: 485.30,
+                        term_months: 84,
+                        status_title: 'Crédito Concluído e Depositado',
+                        status_desc: 'Processo 100% finalizado. O recurso financeiro de R$ 22.000,00 foi creditado em sua conta corrente via TED.',
+                        step_tag: 'Concluído'
+                    }
+                ],
+                recentHistory: [
+                    {
+                        title: 'Recurso Creditado via TED',
+                        proposal_title: 'Empréstimo Consignado INSS #77123-INSS',
+                        event_time: '10/08/2023, às 11:30',
+                        icon: 'account_balance_wallet',
+                        description: 'Valor de R$ 22.000,00 depositado com sucesso via TED na conta corrente cadastrada.'
+                    }
+                ]
+            },
+            '34567890122': {
+                client: {
+                    id: 3,
+                    name: 'Carlos Eduardo Mendes',
+                    cpf: '345.678.901-22',
+                    email: 'carlos.mendes@email.com',
+                    phone: '(21) 99887-1122',
+                    avatarUrl: ''
+                },
+                proposals: [
+                    {
+                        id: 4,
+                        contract_number: '99412-CONS',
+                        service_type: 'CONS_IMOB',
+                        title: 'Consórcio de Imóvel',
+                        started_at: '05/08/2023',
+                        status_label: 'Cota Ativada',
+                        current_step: 2,
+                        step_name: 'APROVACAO',
+                        amount: 500000.00,
+                        monthly_installment: 2458.33,
+                        term_months: 240,
+                        status_title: 'Cota Ativa e Homologada',
+                        status_desc: 'Sua cota foi aprovada e integrada ao Grupo 410. Você já pode ofertar lances nas assembleias mensais.',
+                        step_tag: 'Ativo'
+                    }
+                ],
+                recentHistory: [
+                    {
+                        title: 'Cota Contemplável Criada',
+                        proposal_title: 'Consórcio Imobiliário #99412-CONS',
+                        event_time: '10/08/2023, às 11:00',
+                        icon: 'verified',
+                        description: 'Grupo 410, Cota 291 emitida com sucesso na administradora autorizada pelo Banco Central.'
+                    }
+                ]
             }
-            return { success: false, error: 'Cliente não localizado para o CPF informado.' };
+        };
+
+        // Formata CPF para exibição padrão
+        function formatCPF(cpf) {
+            const raw = String(cpf || '').replace(/\D/g, '');
+            if (raw.length === 11) {
+                return raw.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            }
+            return cpf || '123.456.789-00';
         }
 
         // Renderiza o Stepper de 4 Etapas
@@ -401,9 +645,7 @@
 
             return `
                 <div class="mb-8 relative">
-                    <!-- Background Line -->
                     <div class="absolute top-5 left-8 right-8 h-1 bg-surface-container-high -translate-y-1/2 z-0 hidden sm:block"></div>
-                    <!-- Active Progress Line -->
                     <div class="absolute top-5 left-8 h-1 bg-secondary -translate-y-1/2 z-0 hidden sm:block transition-all duration-500" style="width: ${progressWidth};"></div>
                     
                     <div class="relative z-10 flex flex-col sm:flex-row justify-between gap-6 sm:gap-0">
@@ -448,6 +690,7 @@
         // Renderiza os Processos com Bloco de Status Atual
         function renderProposals(proposals) {
             const container = document.getElementById('processesContainer');
+            if (!container) return;
             if (!proposals || proposals.length === 0) {
                 container.innerHTML = `
                     <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-8 text-center">
@@ -479,11 +722,11 @@
                 const formattedAmount = Number(prop.amount || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
                 const formattedInstallment = prop.monthly_installment > 0 
                     ? Number(prop.monthly_installment).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-                    : 'Desconto Anual / Isento';
+                    : (prop.service_type === 'FGTS_ANIVERSARIO' ? 'Desconto Anual FGTS' : 'Desconto em Folha / Isento');
 
                 const badgeClass = prop.current_step === 1 
-                    ? 'bg-surface-container-high text-on-surface-variant font-status-badge text-status-badge px-3 py-1 rounded-full font-bold' 
-                    : 'bg-secondary-container text-on-secondary-container font-status-badge text-status-badge px-3 py-1 rounded-full font-bold';
+                    ? 'bg-surface-container-high text-on-surface-variant font-status-badge text-status-badge px-3.5 py-1 rounded-full font-bold' 
+                    : 'bg-secondary-container text-on-secondary-container font-status-badge text-status-badge px-3.5 py-1 rounded-full font-bold';
 
                 let dateFormatted = '12/09/2023';
                 if (prop.started_at) {
@@ -495,9 +738,8 @@
                     }
                 }
 
-                // Status Atual Descritivo
-                const statusTitle = prop.status_title || (prop.current_step === 3 ? 'Aguardando Assinatura do Contrato' : prop.current_step === 1 ? 'Análise Inicial em Andamento' : 'Processamento do Contrato');
-                const statusDesc = prop.status_desc || (prop.current_step === 3 ? 'Análise de crédito e laudo do imóvel aprovados. O contrato foi gerado e aguarda sua assinatura.' : 'Documentação recebida e em processamento junto aos órgãos competentes.');
+                const statusTitle = prop.status_title || (prop.current_step === 3 ? 'Aguardando Assinatura do Contrato' : prop.current_step === 1 ? 'Análise Inicial em Andamento' : 'Processamento da Operação');
+                const statusDesc = prop.status_desc || (prop.current_step === 3 ? 'Análise de crédito e avaliação do imóvel concluídas com sucesso. O contrato foi emitido pelo banco e aguarda sua assinatura.' : 'Documentação recebida e em processamento junto aos órgãos competentes.');
                 const progressPercentage = prop.current_step === 1 ? '25%' : prop.current_step === 2 ? '50%' : prop.current_step === 3 ? '75%' : '100%';
 
                 return `
@@ -560,6 +802,7 @@
         // Renderiza Linha do Tempo (Histórico Completo)
         function renderTimeline(events) {
             const container = document.getElementById('timelineContainer');
+            if (!container) return;
             if (!events || events.length === 0) {
                 container.innerHTML = `<p class="text-sm text-on-surface-variant">Nenhum evento registrado ainda.</p>`;
                 return;
@@ -588,92 +831,183 @@
             }).join('');
         }
 
-        // Busca Cliente por CPF
-        async function fetchClientData(cpf) {
-            const btn = document.getElementById('btnSearchCPF');
-            if (btn) {
-                btn.disabled = true;
-                btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">progress_activity</span>';
+        // Atualiza a tela com os dados do cliente e processos
+        function renderClientData(data) {
+            if (!data) return;
+            const { client, proposals, recentHistory } = data;
+            
+            const greeting = document.getElementById('greetingTitle');
+            if (greeting && client.name) greeting.textContent = `Olá, ${client.name}`;
+            
+            const sidebarName = document.getElementById('sidebarClientName');
+            if (sidebarName && client.name) sidebarName.textContent = client.name;
+            
+            const sidebarCPF = document.getElementById('sidebarClientCPF');
+            if (sidebarCPF && client.cpf) sidebarCPF.textContent = `CPF: ${client.cpf}`;
+            
+            const sidebarAvatar = document.getElementById('sidebarAvatar');
+            if (sidebarAvatar && client.avatarUrl) {
+                sidebarAvatar.src = client.avatarUrl;
             }
 
-            try {
-                const raw = String(cpf || '').replace(/\D/g, '');
-                let dataToRender = null;
-
-                // Para o CPF 123.456.789-00 ou qualquer padrão de teste, garante os dados fictícios completos
-                const fallback = getFallbackClientData(cpf);
-                if (fallback && fallback.success && fallback.data) {
-                    dataToRender = fallback.data;
-                }
-
-                // Tenta consultar a API REST se estiver online para dados dinâmicos
-                if (typeof window !== 'undefined' && window.api && typeof window.api.searchClientByCPF === 'function') {
-                    try {
-                        const res = await window.api.searchClientByCPF(cpf);
-                        if (res && res.success && res.data) {
-                            // Se a API retornou, mescla ou utiliza os dados
-                            if (raw !== '12345678900' || !dataToRender) {
-                                dataToRender = res.data;
-                            }
-                        }
-                    } catch (e) {
-                        console.warn('API offline, usando status de demonstração:', e);
-                    }
-                }
-
-                if (dataToRender) {
-                    const { client, proposals, recentHistory } = dataToRender;
-                    
-                    document.getElementById('greetingTitle').textContent = `Olá, ${client.name}`;
-                    const sidebarName = document.getElementById('sidebarClientName');
-                    if (sidebarName) sidebarName.textContent = client.name;
-                    const sidebarCPF = document.getElementById('sidebarClientCPF');
-                    if (sidebarCPF) sidebarCPF.textContent = `CPF: ${client.cpf}`;
-                    const sidebarAvatar = document.getElementById('sidebarAvatar');
-                    if (sidebarAvatar && client.avatarUrl) {
-                        sidebarAvatar.src = client.avatarUrl;
-                    }
-
-                    renderProposals(proposals);
-                    renderTimeline(recentHistory);
-                    if (typeof window.showToast === 'function') {
-                        window.showToast(`Processos de ${client.name} localizados!`, 'success');
-                    }
-                } else {
-                    if (typeof window.showToast === 'function') {
-                        window.showToast('Cliente não localizado para o CPF informado.', 'error');
-                    }
-                }
-            } catch (err) {
-                console.error(err);
-                const fallback = getFallbackClientData('12345678900');
-                if (fallback && fallback.data) {
-                    renderProposals(fallback.data.proposals);
-                    renderTimeline(fallback.data.recentHistory);
-                }
-            } finally {
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = 'Buscar';
-                }
-            }
+            renderProposals(proposals);
+            renderTimeline(recentHistory);
         }
 
-        // Event Listeners
-        document.getElementById('btnSearchCPF').addEventListener('click', () => {
-            const cpf = document.getElementById('cpf-search').value.trim();
-            if (cpf) fetchClientData(cpf);
-        });
+        // Obtém ou gera dados de processos para o CPF (Instantâneo e 100% garantido)
+        function getFictitiousDataForCPF(cpf) {
+            const raw = String(cpf || '').replace(/\D/g, '');
+            const formatted = formatCPF(raw || '12345678900');
 
-        document.getElementById('cpf-search').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const cpf = document.getElementById('cpf-search').value.trim();
-                if (cpf) fetchClientData(cpf);
+            if (CLIENTS_DATABASE[raw]) {
+                return CLIENTS_DATABASE[raw];
             }
-        });
 
-        // Carrega dados iniciais com o CPF padrão
-        fetchClientData('123.456.789-00');
+            // Status fictício completo para qualquer outro CPF
+            return {
+                client: {
+                    id: 99,
+                    name: 'Cliente ' + formatted,
+                    cpf: formatted,
+                    email: 'cliente@mpconsultoria.com.br',
+                    phone: '(11) 98765-4321',
+                    avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBW12h1y0KEC7l-2G0Wt1dVII12EbfpxIgSz31C_xXtK2e5XduWdE5i7QOc64Ic_Ss1A1wM912JNkm_BiyGHWwDc27lnvYcBD8e1mDK7jNK9UYbg6i0RYzvwLTnQI7XAnPg-N47JTENhVe0k_ftIyHWKfka54AIgaTzYQyxS8hgzp2nTqYZ_mJTD1K3S2mNk4d2f_nLhVXOkbQ0DRwt9qLqru7j1r-mTe4SLd-YiHgEPXdlwX3GiLQ'
+                },
+                proposals: [
+                    {
+                        id: 101,
+                        contract_number: '59142-IMOB',
+                        service_type: 'FIN_IMOB',
+                        title: 'Financiamento Imobiliário Residencial (SBPE)',
+                        started_at: '12/09/2023',
+                        status_label: 'Em Andamento',
+                        current_step: 3,
+                        step_name: 'ASSINATURA',
+                        amount: 380000.00,
+                        down_payment: 95000.00,
+                        monthly_installment: 2780.45,
+                        term_months: 360,
+                        status_title: 'Aguardando Assinatura do Contrato',
+                        status_desc: 'Análise de crédito e avaliação do imóvel concluídas com sucesso. O contrato foi emitido pelo banco e está pronto para a sua assinatura eletrônica.',
+                        step_tag: 'Aguardando Cliente'
+                    },
+                    {
+                        id: 102,
+                        contract_number: '9921-FGTS',
+                        service_type: 'FGTS_ANIVERSARIO',
+                        title: 'Empréstimo Saque-Aniversário FGTS',
+                        started_at: '24/10/2023',
+                        status_label: 'Análise Inicial',
+                        current_step: 1,
+                        step_name: 'ANALISE',
+                        amount: 14500.00,
+                        down_payment: 0.00,
+                        monthly_installment: 0,
+                        term_months: 60,
+                        status_title: 'Análise e Reserva de Saldo FGTS',
+                        status_desc: 'Documentação recebida e autorização bancária validada. Saldo de R$ 18.250,00 reservado junto à Caixa Econômica Federal.',
+                        step_tag: 'Em Processamento'
+                    }
+                ],
+                recentHistory: [
+                    {
+                        title: 'Contratos Emitidos para Assinatura',
+                        proposal_title: 'Financiamento Imobiliário #59142-IMOB',
+                        event_time: 'Hoje, às 10:45',
+                        icon: 'drafts',
+                        description: 'A minuta do contrato de financiamento foi gerada pelo banco e enviada para o seu e-mail para assinatura digital.'
+                    },
+                    {
+                        title: 'Crédito Aprovado pelo Banco Emissor',
+                        proposal_title: 'Financiamento Imobiliário #59142-IMOB',
+                        event_time: 'Ontem, às 16:30',
+                        icon: 'check_circle',
+                        description: 'Avaliação de crédito concluída com sucesso. Limite de R$ 380.000,00 liberado com taxa de 9,99% ao ano.'
+                    },
+                    {
+                        title: 'Laudo de Avaliação do Imóvel Aprovado',
+                        proposal_title: 'Financiamento Imobiliário #59142-IMOB',
+                        event_time: '24/10/2023, às 14:00',
+                        icon: 'real_estate_agent',
+                        description: 'Engenheiro credenciado realizou a vistoria e homologou o laudo técnico do imóvel sem pendências.'
+                    },
+                    {
+                        title: 'Documentação Recebida e Homologada',
+                        proposal_title: 'Financiamento Imobiliário #59142-IMOB',
+                        event_time: '18/10/2023, às 11:15',
+                        icon: 'upload_file',
+                        description: 'Certidões negativas, comprovantes de renda e documentos foram validados pelo setor de crédito.'
+                    },
+                    {
+                        title: 'Consulta e Reserva de Saldo FGTS',
+                        proposal_title: 'Empréstimo FGTS #9921-FGTS',
+                        event_time: 'Hoje, às 09:10',
+                        icon: 'savings',
+                        description: 'Saldo de R$ 18.250,00 consultado e bloqueado com sucesso na Caixa para antecipação do Saque-Aniversário.'
+                    }
+                ]
+            };
+        }
+
+        // Função global acionada ao clicar em Buscar, pressionar Enter ou carregar a página
+        window.handleSearch = function(event) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+
+            const input = document.getElementById('cpf-search');
+            const btnText = document.getElementById('btnSearchText');
+            const feedback = document.getElementById('searchStatusFeedback');
+            const rawVal = input ? input.value.trim() : '123.456.789-00';
+            const searchVal = rawVal || '123.456.789-00';
+
+            // Feedback visual no botão
+            if (btnText) {
+                btnText.textContent = 'Buscando...';
+            }
+            if (feedback) {
+                feedback.textContent = 'Consultando base de processos...';
+            }
+
+            // Animação suave nos cards para confirmação visual clara
+            const procContainer = document.getElementById('processesContainer');
+            const timelineContainer = document.getElementById('timelineContainer');
+            if (procContainer) {
+                procContainer.style.opacity = '0.4';
+                procContainer.style.transition = 'opacity 0.2s ease';
+            }
+            if (timelineContainer) {
+                timelineContainer.style.opacity = '0.4';
+                timelineContainer.style.transition = 'opacity 0.2s ease';
+            }
+
+            setTimeout(() => {
+                const data = getFictitiousDataForCPF(searchVal);
+                renderClientData(data);
+
+                if (procContainer) procContainer.style.opacity = '1';
+                if (timelineContainer) timelineContainer.style.opacity = '1';
+                if (btnText) btnText.textContent = 'Buscar';
+                if (feedback) {
+                    feedback.textContent = `✓ Processos exibidos para ${data.client.cpf}`;
+                    setTimeout(() => { if (feedback) feedback.textContent = ''; }, 4000);
+                }
+
+                if (typeof window.showToast === 'function') {
+                    window.showToast(`Processos de ${data.client.name} carregados com sucesso!`, 'success');
+                }
+            }, 180);
+        };
+
+        // Compatibilidade com performSearch
+        window.performSearch = window.handleSearch;
+
+        // Garante a execução em qualquer cenário de ciclo de vida da página
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => window.handleSearch());
+        } else {
+            window.handleSearch();
+        }
     </script>
 </body>
 </html>
