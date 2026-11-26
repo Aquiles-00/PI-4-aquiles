@@ -219,7 +219,7 @@
     <!-- Scripts de Integração com o Backend / Local -->
     <script src="js/api.js"></script>
     <script>
-        // Base de Demonstração Offline Garantida (CPFs de teste)
+        // Base de Demonstração Offline Garantida (Status Fictício Completo)
         function getFallbackClientData(cpf) {
             const raw = String(cpf || '').replace(/\D/g, '');
             const database = {
@@ -237,13 +237,18 @@
                             id: 1,
                             contract_number: '49281-IMOB',
                             service_type: 'FIN_IMOB',
-                            title: 'Financiamento Imobiliário',
+                            title: 'Financiamento Imobiliário Residencial (SBPE)',
                             started_at: '12/09/2023',
                             status_label: 'Em Andamento',
                             current_step: 3,
+                            step_name: 'ASSINATURA',
                             amount: 380000.00,
+                            down_payment: 95000.00,
                             monthly_installment: 2780.45,
-                            term_months: 360
+                            term_months: 360,
+                            status_title: 'Aguardando Assinatura do Contrato',
+                            status_desc: 'Análise de crédito e avaliação do imóvel concluídas com sucesso. O contrato está pronto para a sua assinatura eletrônica.',
+                            step_tag: 'Aguardando Cliente'
                         },
                         {
                             id: 2,
@@ -253,32 +258,51 @@
                             started_at: '24/10/2023',
                             status_label: 'Análise Inicial',
                             current_step: 1,
+                            step_name: 'ANALISE',
                             amount: 14500.00,
+                            down_payment: 0.00,
                             monthly_installment: 0,
-                            term_months: 60
+                            term_months: 60,
+                            status_title: 'Análise e Reserva de Saldo FGTS',
+                            status_desc: 'Documentação recebida e autorização bancária validada. Saldo de R$ 18.250,00 reservado junto à Caixa Econômica.',
+                            step_tag: 'Em Processamento'
                         }
                     ],
                     recentHistory: [
                         {
-                            title: 'Contratos Gerados',
-                            proposal_title: 'Financiamento Imobiliário',
-                            event_time: 'Hoje, 10:45',
+                            title: 'Contratos Emitidos para Assinatura',
+                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                            event_time: 'Hoje, às 10:45',
                             icon: 'drafts',
-                            description: 'Os contratos foram emitidos e enviados para sua área de assinatura digital.'
+                            description: 'A minuta do contrato de financiamento foi gerada pelo banco e enviada para o seu e-mail para assinatura digital.'
                         },
                         {
-                            title: 'Crédito Aprovado',
-                            proposal_title: 'Financiamento Imobiliário',
-                            event_time: 'Ontem, 16:30',
+                            title: 'Crédito Aprovado pelo Banco Emissor',
+                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                            event_time: 'Ontem, às 16:30',
                             icon: 'check_circle',
-                            description: 'Análise de crédito concluída com sucesso pelo banco emissor.'
+                            description: 'Avaliação de crédito concluída com sucesso. Limite de R$ 380.000,00 liberado com taxa de 9,99% ao ano.'
                         },
                         {
-                            title: 'Documentação Recebida',
-                            proposal_title: 'Empréstimo FGTS',
-                            event_time: '24/10/2023, 09:15',
+                            title: 'Laudo de Avaliação do Imóvel Aprovado',
+                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                            event_time: '24/10/2023, às 14:00',
+                            icon: 'real_estate_agent',
+                            description: 'Engenheiro credenciado realizou a vistoria e homologou o laudo técnico do imóvel sem pendências.'
+                        },
+                        {
+                            title: 'Documentação Recebida e Homologada',
+                            proposal_title: 'Financiamento Imobiliário #49281-IMOB',
+                            event_time: '18/10/2023, às 11:15',
                             icon: 'upload_file',
-                            description: 'Todos os documentos necessários foram anexados ao processo de antecipação.'
+                            description: 'Certidões negativas, comprovantes de renda e documentos foram validados pelo setor de crédito.'
+                        },
+                        {
+                            title: 'Consulta e Reserva de Saldo FGTS',
+                            proposal_title: 'Empréstimo FGTS #8832-FGTS',
+                            event_time: 'Hoje, às 09:10',
+                            icon: 'savings',
+                            description: 'Saldo de R$ 18.250,00 consultado e bloqueado com sucesso na Caixa para antecipação do Saque-Aniversário.'
                         }
                     ]
                 },
@@ -300,18 +324,22 @@
                             started_at: '01/08/2023',
                             status_label: 'Crédito Liberado',
                             current_step: 4,
+                            step_name: 'LIBERACAO',
                             amount: 22000.00,
                             monthly_installment: 485.30,
-                            term_months: 84
+                            term_months: 84,
+                            status_title: 'Crédito Concluído e Depositado',
+                            status_desc: 'Processo 100% finalizado. O recurso financeiro de R$ 22.000,00 foi creditado em sua conta corrente.',
+                            step_tag: 'Concluído'
                         }
                     ],
                     recentHistory: [
                         {
-                            title: 'Recurso Creditado',
-                            proposal_title: 'Empréstimo Consignado INSS',
-                            event_time: '10/08/2023, 11:30',
+                            title: 'Recurso Creditado via TED',
+                            proposal_title: 'Empréstimo Consignado INSS #77123-INSS',
+                            event_time: '10/08/2023, às 11:30',
                             icon: 'account_balance_wallet',
-                            description: 'Valor de R$ 22.000,00 depositado com sucesso via TED na conta do cliente.'
+                            description: 'Valor de R$ 22.000,00 depositado com sucesso via TED na conta corrente cadastrada.'
                         }
                     ]
                 },
@@ -329,22 +357,26 @@
                             id: 4,
                             contract_number: '99412-CONS',
                             service_type: 'CONS_IMOB',
-                            title: 'Consórcio de Imóvel',
+                            title: 'Consórcio Imobiliário',
                             started_at: '05/08/2023',
-                            status_label: 'Cota Ativada / Grupo 410',
+                            status_label: 'Cota Ativada',
                             current_step: 2,
+                            step_name: 'APROVACAO',
                             amount: 500000.00,
                             monthly_installment: 2458.33,
-                            term_months: 240
+                            term_months: 240,
+                            status_title: 'Cota Ativa e Homologada',
+                            status_desc: 'Sua cota foi aprovada e integrada ao Grupo 410. Você já pode ofertar lances nas assembleias mensais.',
+                            step_tag: 'Ativo'
                         }
                     ],
                     recentHistory: [
                         {
                             title: 'Cota Contemplável Criada',
-                            proposal_title: 'Consórcio Imobiliário',
-                            event_time: '10/08/2023, 11:00',
+                            proposal_title: 'Consórcio Imobiliário #99412-CONS',
+                            event_time: '10/08/2023, às 11:00',
                             icon: 'verified',
-                            description: 'Grupo 410, Cota 291 emitida com sucesso na administradora.'
+                            description: 'Grupo 410, Cota 291 emitida com sucesso na administradora autorizada pelo Banco Central.'
                         }
                     ]
                 }
@@ -413,7 +445,7 @@
             `;
         }
 
-        // Renderiza os Processos
+        // Renderiza os Processos com Bloco de Status Atual
         function renderProposals(proposals) {
             const container = document.getElementById('processesContainer');
             if (!proposals || proposals.length === 0) {
@@ -463,6 +495,11 @@
                     }
                 }
 
+                // Status Atual Descritivo
+                const statusTitle = prop.status_title || (prop.current_step === 3 ? 'Aguardando Assinatura do Contrato' : prop.current_step === 1 ? 'Análise Inicial em Andamento' : 'Processamento do Contrato');
+                const statusDesc = prop.status_desc || (prop.current_step === 3 ? 'Análise de crédito e laudo do imóvel aprovados. O contrato foi gerado e aguarda sua assinatura.' : 'Documentação recebida e em processamento junto aos órgãos competentes.');
+                const progressPercentage = prop.current_step === 1 ? '25%' : prop.current_step === 2 ? '50%' : prop.current_step === 3 ? '75%' : '100%';
+
                 return `
                     <div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_6px_-1px_rgba(15,23,42,0.05)] border border-outline-variant p-6 md:p-8">
                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
@@ -485,6 +522,21 @@
                         <!-- Stepper Visual -->
                         ${renderStepper(prop.current_step)}
 
+                        <!-- Bloco de Status Atual em Destaque -->
+                        <div class="mb-6 p-4 rounded-xl bg-surface-container-low border border-outline-variant/40">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-secondary flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                                    Status Atual do Processo
+                                </span>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full ${prop.current_step === 3 ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-surface-container-high text-on-surface'}">
+                                    Etapa ${prop.current_step} de 4 (${progressPercentage})
+                                </span>
+                            </div>
+                            <div class="font-bold text-on-surface text-base mb-1">${statusTitle}</div>
+                            <p class="text-sm text-on-surface-variant leading-relaxed">${statusDesc}</p>
+                        </div>
+
                         <!-- Detalhes do Processo -->
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-outline-variant/30 text-sm">
                             <div>
@@ -505,7 +557,7 @@
             }).join('');
         }
 
-        // Renderiza Linha do Tempo
+        // Renderiza Linha do Tempo (Histórico Completo)
         function renderTimeline(events) {
             const container = document.getElementById('timelineContainer');
             if (!events || events.length === 0) {
@@ -522,14 +574,14 @@
                     }
                 }
                 return `
-                    <div class="relative flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary">
+                    <div class="relative flex items-start gap-4 pb-4 border-b border-outline-variant/20 last:border-b-0 last:pb-0">
+                        <div class="w-10 h-10 rounded-full bg-surface-container border-2 border-surface-container-lowest flex items-center justify-center shrink-0 text-secondary shadow-sm">
                             <span class="material-symbols-outlined text-sm">${ev.icon || 'check_circle'}</span>
                         </div>
-                        <div>
+                        <div class="flex-1">
                             <div class="font-label-md text-label-md font-bold text-on-surface">${ev.title}</div>
-                            <div class="text-xs text-on-surface-variant mb-1">${ev.proposal_title ? ev.proposal_title + ' • ' : ''}${dateStr}</div>
-                            <p class="text-sm text-on-surface">${ev.description}</p>
+                            <div class="text-xs text-on-surface-variant mb-1 font-medium">${ev.proposal_title ? ev.proposal_title + ' • ' : ''}${dateStr}</div>
+                            <p class="text-sm text-on-surface leading-relaxed">${ev.description}</p>
                         </div>
                     </div>
                 `;
@@ -545,23 +597,32 @@
             }
 
             try {
-                let res = null;
-                // Tenta consultar a API REST se estiver online
-                if (window.api && typeof window.api.searchClientByCPF === 'function') {
+                const raw = String(cpf || '').replace(/\D/g, '');
+                let dataToRender = null;
+
+                // Para o CPF 123.456.789-00 ou qualquer padrão de teste, garante os dados fictícios completos
+                const fallback = getFallbackClientData(cpf);
+                if (fallback && fallback.success && fallback.data) {
+                    dataToRender = fallback.data;
+                }
+
+                // Tenta consultar a API REST se estiver online para dados dinâmicos
+                if (typeof window !== 'undefined' && window.api && typeof window.api.searchClientByCPF === 'function') {
                     try {
-                        res = await window.api.searchClientByCPF(cpf);
+                        const res = await window.api.searchClientByCPF(cpf);
+                        if (res && res.success && res.data) {
+                            // Se a API retornou, mescla ou utiliza os dados
+                            if (raw !== '12345678900' || !dataToRender) {
+                                dataToRender = res.data;
+                            }
+                        }
                     } catch (e) {
-                        console.warn('API indisponível, usando fallback local:', e);
+                        console.warn('API offline, usando status de demonstração:', e);
                     }
                 }
 
-                // Se a API não respondeu ou não encontrou, usa a base demonstrativa
-                if (!res || !res.success || !res.data) {
-                    res = getFallbackClientData(cpf);
-                }
-
-                if (res && res.success && res.data) {
-                    const { client, proposals, recentHistory } = res.data;
+                if (dataToRender) {
+                    const { client, proposals, recentHistory } = dataToRender;
                     
                     document.getElementById('greetingTitle').textContent = `Olá, ${client.name}`;
                     const sidebarName = document.getElementById('sidebarClientName');
@@ -576,19 +637,17 @@
                     renderProposals(proposals);
                     renderTimeline(recentHistory);
                     if (typeof window.showToast === 'function') {
-                        window.showToast(`Dados de ${client.name} carregados com sucesso!`, 'success');
+                        window.showToast(`Processos de ${client.name} localizados!`, 'success');
                     }
                 } else {
-                    const errorMsg = (res && res.error) ? res.error : 'Cliente não localizado para o CPF informado.';
                     if (typeof window.showToast === 'function') {
-                        window.showToast(errorMsg, 'error');
+                        window.showToast('Cliente não localizado para o CPF informado.', 'error');
                     }
                 }
             } catch (err) {
                 console.error(err);
-                const fallback = getFallbackClientData(cpf);
-                if (fallback && fallback.success && fallback.data) {
-                    document.getElementById('greetingTitle').textContent = `Olá, ${fallback.data.client.name}`;
+                const fallback = getFallbackClientData('12345678900');
+                if (fallback && fallback.data) {
                     renderProposals(fallback.data.proposals);
                     renderTimeline(fallback.data.recentHistory);
                 }
